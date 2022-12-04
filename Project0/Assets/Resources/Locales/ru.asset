@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a8134ab1392984ca19487b1066e24b, type: 3}
+  m_Name: ru
+  m_EditorClassIdentifier: 
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6WKik0ukVpxDjb5rXat3xNNz6yzKfIK-ASCVr4Ux4CRnrHfwKDQY9WFMU1CqGqcI9_gjCQJ0pCp-s/pub?gid=1569594872&single=true&output=tsv
+  _localItems:
+  - Key: menu_title
+    Value: "\u043C\u0435\u043D\u044E\r"
+  - Key: button_start
+    Value: "\u0441\u0442\u0430\u0440\u0442\r"
+  - Key: button_options
+    Value: "\u043E\u043F\u0446\u0438\u0438\r"
+  - Key: button_exit
+    Value: "\u0432\u044B\u0445\u043E\u0434\r"
+  - Key: selected_language
+    Value: "\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0439 \u044F\u0437\u044B\u043A
+      {0}\r"
+  - Key: button_back
+    Value: "\u043D\u0430\u0437\u0430\u0434\r"
+  - Key: button_language
+    Value: "\u044F\u0437\u044B\u043A\r"
+  - Key: button_pause
+    Value: "\u043F\u0430\u0443\u0437\u0430\r"
+  - Key: button_music
+    Value: "\u043C\u0443\u0437\u044B\u043A\u0430\r"
+  - Key: button_sounds
+    Value: "\u0437\u0432\u0443\u043A\u0438\r"
+  - Key: button_resume
+    Value: "\u043F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C\r"
+  - Key: button_restart
+    Value: "\u0440\u0435\u0441\u0442\u0430\u0440\u0442\r"
+  - Key: button_mainmenu
+    Value: "\u043C\u0435\u043D\u044E"

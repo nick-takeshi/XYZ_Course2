@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0a8134ab1392984ca19487b1066e24b, type: 3}
+  m_Name: en
+  m_EditorClassIdentifier: 
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vQ6WKik0ukVpxDjb5rXat3xNNz6yzKfIK-ASCVr4Ux4CRnrHfwKDQY9WFMU1CqGqcI9_gjCQJ0pCp-s/pub?gid=0&single=true&output=tsv
+  _localItems:
+  - Key: menu_title
+    Value: "menu\r"
+  - Key: button_start
+    Value: "start\r"
+  - Key: button_options
+    Value: "options\r"
+  - Key: button_exit
+    Value: "exit\r"
+  - Key: selected_language
+    Value: "Selected language is {0}\r"
+  - Key: button_back
+    Value: "back\r"
+  - Key: button_language
+    Value: "language\r"
+  - Key: button_pause
+    Value: "pause\r"
+  - Key: button_music
+    Value: "music\r"
+  - Key: button_sounds
+    Value: "sounds\r"
+  - Key: button_resume
+    Value: "resume\r"
+  - Key: button_restart
+    Value: "restart\r"
+  - Key: button_mainmenu
+    Value: main menu
