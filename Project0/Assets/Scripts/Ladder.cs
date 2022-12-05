@@ -5,9 +5,12 @@ using UnityEngine;
 public class Ladder : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private Rigidbody2D _hero;
+    private Rigidbody2D _hero;
 
-
+    private void Start()
+    {
+        _hero = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+    }
 
     public void OnTriggerStay2D(Collider2D other)
     {

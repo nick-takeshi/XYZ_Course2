@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c56ad9f4a8c3b14f8952f1b35857333, type: 3}
-  m_Name: InventoryItems
+  m_Name: Inventory
   m_EditorClassIdentifier: 
-  _items:
+  _collection:
   - _id: Coin
     _icon: {fileID: 1814757792, guid: eac033a65d09ae0448ac40b0baf6c01f, type: 3}
     _tags: 0100000000000000
@@ -22,18 +22,18 @@ MonoBehaviour:
   - _id: Key
     _icon: {fileID: 21300000, guid: fb17c7ffde200f94c9c45a6459e44449, type: 3}
     _tags: 01000000
-  - _id: HealPotion
-    _icon: {fileID: 21300000, guid: 2a71fc3b9f2374b44bcbcdc8a1590fb9, type: 3}
-    _tags: 0000000001000000
   - _id: RedKey
     _icon: {fileID: 21300000, guid: 52bb9d15bb0970a4291b84ca46ae661a, type: 3}
     _tags: 01000000
   - _id: Pearl
     _icon: {fileID: 21300000, guid: 59e4986ea1925b741a3664cac8141ca4, type: 3}
     _tags: 010000000000000002000000
-  - _id: SpeedPotion
-    _icon: {fileID: 21300000, guid: d98df0941bc071942b281b52f5e30dc4, type: 3}
-    _tags: 01000000
+  - _id: HealPotion
+    _icon: {fileID: 21300000, guid: 2a71fc3b9f2374b44bcbcdc8a1590fb9, type: 3}
+    _tags: 000000000100000003000000
   - _id: BigHealPotion
     _icon: {fileID: 21300000, guid: de29401a2d01d1f479572d90a135223e, type: 3}
-    _tags: 0100000000000000
+    _tags: 010000000000000003000000
+  - _id: SpeedPotion
+    _icon: {fileID: 21300000, guid: d98df0941bc071942b281b52f5e30dc4, type: 3}
+    _tags: 010000000000000003000000

@@ -6,6 +6,7 @@ using UnityEngine;
     {
         Stackable,
         Usable,
-        Throwable
+        Throwable,
+        Potion
     }
 

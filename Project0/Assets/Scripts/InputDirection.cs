@@ -35,7 +35,7 @@ public class InputDirection : MonoBehaviour
     {
         if (context.performed)
         {
-            _hero.Throw();
+            _hero.UseInventory();
         }
     }
 
@@ -46,18 +46,6 @@ public class InputDirection : MonoBehaviour
             _hero.Dodge();
         }
     }
-
-    public void OnUseItem(InputAction.CallbackContext context)
-    {
-
-        if (context.performed)
-        {
-            _hero.OnUsePotion();
-        }
-
-
-    }
-
     public void OnNextItem(InputAction.CallbackContext context)
     {
         if (context.performed)

@@ -7,9 +7,9 @@ public class InventoryAddComponent : MonoBehaviour
     [SerializeField] private string _id;
     [SerializeField] private int _count;
 
-    public void Add(GameObject go)
+    public void Add()
     {
-       var hero = go.GetComponent<Hero>();
+       var hero = GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>();
         if (hero != null)
             hero.AddInInventory(_id,_count);
     }

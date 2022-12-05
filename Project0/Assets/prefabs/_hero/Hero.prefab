@@ -5361,7 +5361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inverScale: 0
-  speed: 3.5
+  _speed: 4
   _jumpSpeed: 10
   _damgeVelocity: 1
   _damage: 1

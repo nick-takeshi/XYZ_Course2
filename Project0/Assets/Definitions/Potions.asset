@@ -9,11 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f083ffbd8efeb644a949fccf36d807c2, type: 3}
-  m_Name: UsableItems
+  m_Script: {fileID: 11500000, guid: fcf15c0f140dc5749a453b84dbeedbeb, type: 3}
+  m_Name: Potions
   m_EditorClassIdentifier: 
-  _items:
-  - _id: BigHealPotion
-    _healValue: 8
+  _collection:
   - _id: HealPotion
-    _healValue: 5
+    _effect: 0
+    _value: 4
+    _time: 0
+  - _id: BigHealPotion
+    _effect: 0
+    _value: 8
+    _time: 0
+  - _id: SpeedPotion
+    _effect: 1
+    _value: 2
+    _time: 5

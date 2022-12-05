@@ -11,7 +11,20 @@ public class QuickInventoryModel : IDisposable
     public readonly IntProperty SelectedIndex = new IntProperty();
 
     public event Action OnChanged;
-    public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+    // public InventoryItemData SelectedItem => Inventory[SelectedIndex.Value];
+    public InventoryItemData SelectedItem
+    {
+        get
+        {
+            if (Inventory.Length > 0 && Inventory.Length > SelectedIndex.Value)
+            {
+                return Inventory[SelectedIndex.Value];
+            }
+
+            return null;
+        }
+    }
+    public ItemDef SelectedDef => DefsFacade.I.Items.Get(SelectedItem?.Id);
     public QuickInventoryModel(PlayerData data)
     {
         _data = data;

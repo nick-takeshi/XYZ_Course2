@@ -6,7 +6,7 @@ public class Creature : MonoBehaviour
 {
     [Header("Paarams")]
     [SerializeField] private bool _inverScale;
-    [SerializeField] public float speed;
+    [SerializeField] public float _speed;
     [SerializeField] protected float _jumpSpeed;
     [SerializeField] protected float _damgeVelocity;
     [SerializeField] protected int _damage;
@@ -50,7 +50,7 @@ public class Creature : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        var xVelocity = _direction.x * speed;
+        var xVelocity = _direction.x * CaplculateSpeed();
         var yVelocity = CalculateYVelocity();
         _rigidbody.velocity = new Vector2(xVelocity, yVelocity);
 
@@ -61,6 +61,11 @@ public class Creature : MonoBehaviour
 
 
         UpdateSpriteDir(_direction);
+    }
+
+    protected virtual float CaplculateSpeed()
+    {
+        return _speed;
     }
 
     protected virtual float CalculateYVelocity()

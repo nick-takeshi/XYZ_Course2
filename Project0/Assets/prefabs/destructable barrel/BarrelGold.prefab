@@ -265,6 +265,9 @@ MonoBehaviour:
   _onHealing:
     m_PersistentCalls:
       m_Calls: []
+  _onChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2759788862510496224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +334,7 @@ MonoBehaviour:
   _prefabGolden: {fileID: 4720346303449294649, guid: 3f4a9da4d44e7c040a78881c3f400873, type: 3}
   _powerOfJump: 5
   _numberOfSilverCoins: 0
-  _numberOfGoldenCoins: 2
+  _numberOfGoldenCoins: 1
   _silverProbabilityPercentage: 0
   _goldProbabilityPercentage: 100
 --- !u!82 &5509909026676800989

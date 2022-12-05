@@ -166,6 +166,10 @@ public class Hero : Creature
         _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
         Debug.Log(_animator.runtimeAnimatorController);
     }
+    public void NextItem()
+    {
+        _session.QuickInventory.SetNextItem();
+    }
     public void OnHealthChanged(int currentHealth)
     {
         _session.Data.Hp.Value = currentHealth;
@@ -194,65 +198,110 @@ public class Hero : Creature
         coll.size = new Vector2(0.7f, 0.25f);
         _animator.SetBool("isDodge", true);
     }
-    public void Heal(string id)
-    {
-        if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "BigHealPotion")
-        {
-            _session.Data.Inventory.Remove(id, 1);
-            Healing(8);
-        }
-        else if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "HealPotion")
-        {
-            _session.Data.Inventory.Remove(id, 1);
-            Healing(5);
-        }
-        else return;
-    }
-    public void Healing(int value)
-    {
-        var healthComponent = GetComponent<HealthComponent>();
-        if (healthComponent != null)
-        {
-            healthComponent.HealHP(value);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += value;
-            _sounds.Play("Heal");
-        }
-    }
-    public void NextItem()
-    {
-        _session.QuickInventory.SetNextItem();
-    }
-    public void OnUsePotion()
-    {
-        var usableId = _session.QuickInventory.SelectedItem.Id;
 
-        if (usableId == "BigHealPotion")
+    //public void Heal(string id)
+    //{
+    //    if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "BigHealPotion")
+    //    {
+    //        _session.Data.Inventory.Remove(id, 1);
+    //        Healing(8);
+    //    }
+    //    else if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "HealPotion")
+    //    {
+    //        _session.Data.Inventory.Remove(id, 1);
+    //        Healing(5);
+    //    }
+    //    else return;
+    //}
+    //public void Healing(int value)
+    //{
+    //    var healthComponent = GetComponent<HealthComponent>();
+    //    if (healthComponent != null)
+    //    {
+    //        healthComponent.HealHP(value);
+    //        GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += value;
+    //        
+    //    }
+    //}
+    
+    //public void OnUsePotion()
+    //{
+    //    var usableId = _session.QuickInventory.SelectedItem.Id;
+
+    //    if (usableId == "BigHealPotion")
+    //    {
+    //        Heal(usableId);
+    //    }
+    //    else if (usableId == "HealPotion")
+    //    {
+    //        Heal(usableId);
+    //    }
+    //    else if(usableId == "SpeedPotion")
+    //    {
+    //        IncreaseSpeed();
+    //    }
+    //}
+    //public void IncreaseSpeed()
+    //{
+    //    if (_session.Data.Inventory.Count("SpeedPotion") > 0)
+    //    {
+    //        _session.Data.Inventory.Remove("SpeedPotion", 1);
+
+    //        speed += 2;
+    //        Invoke("DecreaseSpeed", 5);
+    //        _timer.SpawnTimer();
+
+    //    }
+    //}
+    //public void DecreaseSpeed()
+    //{
+    //    speed -= 2;
+    //}
+
+    public void UseInventory()
+    {
+        if (IsSelectedItem(ItemTag.Throwable))
         {
-            Heal(usableId);
+            Throw();
         }
-        else if (usableId == "HealPotion")
+        else if (IsSelectedItem(ItemTag.Potion))
         {
-            Heal(usableId);
-        }
-        else if(usableId == "SpeedPotion")
-        {
-            IncreaseSpeed();
+            UsePotion();
         }
     }
-    public void IncreaseSpeed()
+    private bool IsSelectedItem(ItemTag tag)
     {
-        if (_session.Data.Inventory.Count("SpeedPotion") > 0)
-        {
-            _session.Data.Inventory.Remove("SpeedPotion", 1);
-
-            speed += 2;
-            Invoke("DecreaseSpeed", 5);
-            _timer.SpawnTimer();
-
-        }
+        return _session.QuickInventory.SelectedDef.HasTag(tag);
     }
-    public void DecreaseSpeed()
+    public void UsePotion()
     {
-        speed -= 2;
+        var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+
+        switch (potion.Effect)
+        {
+            case Effect.AddHp:
+                _session.Data.Hp.Value += (int)potion.Value;
+                _sounds.Play("Heal");
+                break;
+                    case Effect.SpeedUp:
+                        _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + potion.Time;
+                        _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+                        _speedUpCooldown.Reset();
+                break;
+            default:
+                break;
+        }
+
+        _session.Data.Inventory.Remove(potion.Id, 1);
+    }
+    private readonly Cooldown _speedUpCooldown = new Cooldown();
+    private float _additionalSpeed;
+
+    protected override float CaplculateSpeed()
+    {
+        if (_speedUpCooldown.IsReady)
+            _additionalSpeed = 0f;
+
+        return base.CaplculateSpeed() + _additionalSpeed;
     }
 }

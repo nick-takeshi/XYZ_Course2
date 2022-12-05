@@ -65,7 +65,7 @@ public class MobAIForStar : MonoBehaviour
         LookAtHero();
 
         if (_exclDelay.IsReady) _particles.Spawn("Exclamation"); _exclDelay.Reset();
-        _creature.speed += _speedIncrease;
+        _creature._speed += _speedIncrease;
         yield return new WaitForSeconds(_alarmDelay);
         StartState(GoToHero());
     }
@@ -92,7 +92,7 @@ public class MobAIForStar : MonoBehaviour
         _creature.SetDirection(Vector2.zero);
         if (_misDelay.IsReady) _particles.Spawn("Miss"); _misDelay.Reset();
         yield return new WaitForSeconds(_missDelay);
-        _creature.speed -= _speedIncrease;
+        _creature._speed -= _speedIncrease;
         StartState(_patrol.DoPatrol());
     }
 
