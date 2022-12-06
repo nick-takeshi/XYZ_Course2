@@ -5697,8 +5697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inverScale: 1
-  speed: 1
-  _jumpSpeed: 5
+  _speed: 1
+  _jumpPower: 0
   _damgeVelocity: 1
   _damage: 2
   _groundLayer:
@@ -5724,7 +5724,7 @@ MonoBehaviour:
   _vision: {fileID: 6139111427349654244}
   _canAttack: {fileID: 555026713009818118}
   _alarmDelay: 0.5
-  _attackDelay: 2
+  _attackDelay: 1.2
   _missDelay: 0.5
   _exclDelay:
     _value: 4
@@ -5890,7 +5890,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 4162395562633549158}
-  _animator: {fileID: 4162395562633549086}
+  _storeState: {fileID: 0}
+  _timeToDestroy: 0
 --- !u!114 &1887818601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5919,7 +5920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e533f58a74865344780935e920b6b0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds: []
 --- !u!1 &7724792666146032347
 GameObject:

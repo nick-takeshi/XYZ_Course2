@@ -39,4 +39,10 @@ MonoBehaviour:
   - Key: button_restart
     Value: "restart\r"
   - Key: button_mainmenu
-    Value: main menu
+    Value: "main menu\r"
+  - Key: button_gamemenu
+    Value: "game menu\r"
+  - Key: button_use
+    Value: "USE\r"
+  - Key: button_buy
+    Value: BUY

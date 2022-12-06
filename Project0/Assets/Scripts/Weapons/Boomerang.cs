@@ -33,11 +33,11 @@ public class Boomerang : MonoBehaviour
 
         if (_direction == 1 & transform.position.x > _end)
         {
-            fin.x -= 3f;
+            fin.x -= 3.3f;
         }
         else if(_direction == -1 & transform.position.x < _end)
         { 
-            fin.x += 3f;
+            fin.x += 3.3f;
         }
 
     }

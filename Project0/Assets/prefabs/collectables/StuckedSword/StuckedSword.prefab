@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -1698959254533234873}
   - component: {fileID: -5588026155706006985}
   - component: {fileID: 4863992403069119270}
+  - component: {fileID: 3829590366046012476}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -125,7 +126,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 4002573873482287411}
-  _animator: {fileID: 0}
+  _storeState: {fileID: 3829590366046012476}
+  _timeToDestroy: 0.1
 --- !u!50 &-9102721547551250624
 Rigidbody2D:
   serializedVersion: 4
@@ -196,7 +198,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 7141894895744229073}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyParticle
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -220,3 +222,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _id: Sword
   _count: 1
+--- !u!114 &3829590366046012476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002573873482287411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91d1bfdbd9a78f40b94f4a3a6daf15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: stucked-sword

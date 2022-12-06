@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 public class ObservableProperty<TPropertyType>
 {
     [SerializeField] private TPropertyType _value;
@@ -22,15 +23,14 @@ public class ObservableProperty<TPropertyType>
         call(_value, _value);
         return dispose;
     }
-    public TPropertyType Value
+    public virtual TPropertyType Value
     {
         get => _value;
         set
         {
-            var isSame = _value.Equals(value);
+            var isSame = _value?.Equals(value) ?? false;
             if (isSame) return;
             var oldValue = _value;
-
             _value = value;
             InvokeChangedEvent(_value, oldValue);
 

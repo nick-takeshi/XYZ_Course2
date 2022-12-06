@@ -19,11 +19,10 @@ public class Hero : Creature
     [SerializeField] private CheckCircleOverlap _interactionCheck;
     [SerializeField] private SpawnComponent _timer;
     private bool _allowDoubleJump;
-    private bool _getDoubleJump;
-    private bool _isDodge;
     private Rigidbody2D rigid;
     private CapsuleCollider2D coll;
     private const string SwordId = "Sword";
+    private HealthComponent _health;
 
 
     public GameSession _session;
@@ -56,6 +55,8 @@ public class Hero : Creature
     {
         _session = FindObjectOfType<GameSession>();
         _session.Data.Inventory.OnChanged += OnInventoryChanged;
+        _health = GetComponent<HealthComponent>();
+        _health.SetHealth(_session.Data.Hp.Value);
         UpdateHeroWeapon();
         gameObject.transform.localScale = Vector3.one;
     }
@@ -83,31 +84,26 @@ public class Hero : Creature
     }
     protected override float CalculateYVelocity()
     {
-        var isJump = _direction.y > 0;
-        var Yvelocity = _rigidbody.velocity.y;
-
-        if (_getDoubleJump)
-        {
-            if (_isGrounded) _allowDoubleJump = true;
-        }
+        if (_isGrounded) _allowDoubleJump = true;
+        
 
         return base.CalculateYVelocity();
     }
-    protected override float CalculateJumpVelocity(float Yvelocity)
+    protected override float CalculateJumpVelocity(float yVelocity)
     {
-
-        if (_isGrounded)
+        if (!_isGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
         {
-            _sounds.Play("Jump");
-
-            _JumpParticles.Spawn();
             _allowDoubleJump = false;
-            return _jumpSpeed;
+
+            DoJumpVfx();
+
+            return _jumpPower;
         }
 
-        return base.CalculateJumpVelocity(Yvelocity);
+        return base.CalculateJumpVelocity(yVelocity);
     }
 
+    
     public void AddInInventory(string id, int value)
     {
         _session.Data.Inventory.Add(id, value);
@@ -121,6 +117,7 @@ public class Hero : Creature
     public override void TakeDamage()
     {
         base.TakeDamage();
+        _health.SetHealth(_session.Data.Hp.Value);
 
 
     }
@@ -128,15 +125,6 @@ public class Hero : Creature
     {
         _interactionCheck.Check();
 
-    }
-    public void GetPower()
-    {
-        _getDoubleJump = true;
-        Invoke("LosePower", 5);
-    }
-    private void LosePower()
-    {
-        _getDoubleJump = false;
     }
     public void SpawnFootDust()
     {
@@ -164,7 +152,6 @@ public class Hero : Creature
     {
         _animator = GetComponent<Animator>();
         _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
-        Debug.Log(_animator.runtimeAnimatorController);
     }
     public void NextItem()
     {
@@ -281,6 +268,7 @@ public class Hero : Creature
         {
             case Effect.AddHp:
                 _session.Data.Hp.Value += (int)potion.Value;
+                _health.SetHealth(_session.Data.Hp.Value);
                 _sounds.Play("Heal");
                 break;
                     case Effect.SpeedUp:

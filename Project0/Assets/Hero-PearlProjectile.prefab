@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0880a62a7836da547bf1a7264a1d687f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 7
+  _speed: 8
 --- !u!114 &-6711293528313106208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,9 +172,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -4903370854617511059}
+      - m_Target: {fileID: -4903370854617511059, guid: df6f68a8dd98b9d4db6076ec2defcbfc, type: 3}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyParticle
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -197,7 +197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 7989396264825474856}
-  _animator: {fileID: 0}
+  _storeState: {fileID: 0}
+  _timeToDestroy: 0.01
 --- !u!114 &7220243083329307977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +234,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: -4903370854617511059}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyParticle
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

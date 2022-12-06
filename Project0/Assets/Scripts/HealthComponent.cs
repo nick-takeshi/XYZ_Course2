@@ -37,6 +37,16 @@ public class HealthComponent : MonoBehaviour
 
     }
 
+    public void SetHealth(int health)
+    {
+        _health = health;
+    }
+
+    private void OnDestroy()
+    {
+        _onDie.RemoveAllListeners();
+    }
+
     [Serializable]
     public class HealthChangeEvent : UnityEvent<int>
     {

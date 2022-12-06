@@ -7,15 +7,16 @@ using System.Linq;
 public class GameSession : MonoBehaviour
 {
     [SerializeField] private PlayerData _data;
-    [SerializeField] private string _defaultCheckPoint;
+    [SerializeField] public string _defaultCheckPoint;
 
     public PlayerData Data => _data;
     private PlayerData _save;
 
     private readonly CompositeDisposable _trash = new CompositeDisposable();
     public QuickInventoryModel QuickInventory { get; private set; }
+    public PerksModel PerksModel { get; private set; }
 
-    private List<string> _checkpoints = new List<string>();
+    public List<string> _checkpoints = new List<string>();
 
     private void Awake()
     {
@@ -30,9 +31,7 @@ public class GameSession : MonoBehaviour
         {
             Save();
             InitModels();
-
             DontDestroyOnLoad(this);
-
             StartSession(_defaultCheckPoint);
         }
     }
@@ -63,6 +62,9 @@ public class GameSession : MonoBehaviour
     {
         QuickInventory = new QuickInventoryModel(_data);
         _trash.Retain(QuickInventory);
+
+        PerksModel = new PerksModel(_data);
+        _trash.Retain(PerksModel);
     }
 
     private void LoadHUD()
@@ -116,6 +118,19 @@ public class GameSession : MonoBehaviour
 
             _checkpoints.Add(id);
         }
+    }
+
+    public List<string> _removedItems = new List<string>();
+
+    public bool RestoreState(string itemId)
+    {
+        return _removedItems.Contains(itemId);
+    }
+
+    public void StoreState(string itemId)
+    {
+        if (!_removedItems.Contains(itemId))
+            _removedItems.Add(itemId);
     }
 }
 

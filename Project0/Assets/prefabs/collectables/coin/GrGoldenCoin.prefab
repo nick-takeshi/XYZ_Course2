@@ -147,6 +147,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4720346303449294627}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pickup
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4720346303449294655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 4720346303449294649}
-  _animator: {fileID: 4720346303449294627}
+  _storeState: {fileID: 0}
+  _timeToDestroy: 0.25
 --- !u!58 &4720346303449294654
 CircleCollider2D:
   m_ObjectHideFlags: 0

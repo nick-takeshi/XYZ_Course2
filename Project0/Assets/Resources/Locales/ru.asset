@@ -40,4 +40,10 @@ MonoBehaviour:
   - Key: button_restart
     Value: "\u0440\u0435\u0441\u0442\u0430\u0440\u0442\r"
   - Key: button_mainmenu
-    Value: "\u043C\u0435\u043D\u044E"
+    Value: "\u0433\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E\r"
+  - Key: button_gamemenu
+    Value: "\u043C\u0435\u043D\u044E \u0438\u0433\u0440\u044B\r"
+  - Key: button_use
+    Value: "\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\r"
+  - Key: button_buy
+    Value: "\u043A\u0443\u043F\u0438\u0442\u044C"

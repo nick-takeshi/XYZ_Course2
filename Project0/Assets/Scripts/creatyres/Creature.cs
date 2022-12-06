@@ -7,7 +7,7 @@ public class Creature : MonoBehaviour
     [Header("Paarams")]
     [SerializeField] private bool _inverScale;
     [SerializeField] public float _speed;
-    [SerializeField] protected float _jumpSpeed;
+    [SerializeField] protected float _jumpPower;
     [SerializeField] protected float _damgeVelocity;
     [SerializeField] protected int _damage;
 
@@ -70,27 +70,41 @@ public class Creature : MonoBehaviour
 
     protected virtual float CalculateYVelocity()
     {
-        var isJump = _direction.y > 0;
-        var Yvelocity = _rigidbody.velocity.y;
+        var yVelocity = _rigidbody.velocity.y;
+        var isJumpPressing = _direction.y > 0;
 
-        if (isJump)
+        if (_isGrounded)
         {
-            var isFalling = _rigidbody.velocity.y <= 0.001f;
-            if (!isFalling) return Yvelocity;
-
-            Yvelocity = CalculateJumpVelocity(Yvelocity);
+            _isJumping = false;
         }
+        if (isJumpPressing)
+        {
+            _isJumping = true;
+            var isFalling = _rigidbody.velocity.y <= 0.001f;
+            yVelocity = isFalling ? CalculateJumpVelocity(yVelocity) : yVelocity;
+        }
+        //else if (_rigidbody.velocity.y > 0 && _isJumping)
+        //{
+        //    yVelocity *= 0.5f;
+        //}
 
-        return Yvelocity;
+        return yVelocity;
     }
-    protected virtual float CalculateJumpVelocity(float Yvelocity)
+    protected virtual float CalculateJumpVelocity(float yVelocity)
     {
         if (_isGrounded)
         {
-            Yvelocity = _jumpSpeed;
-            _JumpParticles.Spawn();
+            yVelocity += _jumpPower;
+
+            DoJumpVfx();
         }
-        return Yvelocity;
+        return yVelocity;
+    }
+    public void DoJumpVfx()
+    {
+        _sounds.Play("Jump");
+
+        _JumpParticles.Spawn();
     }
     public void UpdateSpriteDir(Vector2 direction)
     {

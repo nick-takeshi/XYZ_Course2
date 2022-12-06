@@ -7,8 +7,9 @@ public class ReloadLevel : MonoBehaviour
 {
     public void Reload()
     {
-        var _session = FindObjectOfType<GameSession>();
-        Destroy(_session);
+        var session = FindObjectOfType<GameSession>();
+        session.LoadLastSave();
+
         var scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
         

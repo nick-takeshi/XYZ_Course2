@@ -11,6 +11,8 @@ public class PlayerData
 
     public IntProperty Hp = new IntProperty();
 
+    public PerksData Perks = new PerksData();
+
     public PlayerData Clone()
     {
         var json = JsonUtility.ToJson(this);

@@ -37,3 +37,6 @@ MonoBehaviour:
   - _id: SpeedPotion
     _icon: {fileID: 21300000, guid: d98df0941bc071942b281b52f5e30dc4, type: 3}
     _tags: 010000000000000003000000
+  - _id: BlueDiamond
+    _icon: {fileID: 21300000, guid: 919db1d39ebcd6f4897bdbd6ad2c6ac3, type: 3}
+    _tags: 0100000000000000

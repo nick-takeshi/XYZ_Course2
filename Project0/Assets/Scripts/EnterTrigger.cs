@@ -14,7 +14,6 @@ public class EnterTrigger : MonoBehaviour
         if (!collision.gameObject.IsInLayer(_layer)) return;
         if (!string.IsNullOrEmpty(_tag) && !collision.gameObject.CompareTag(_tag)) return;
 
-        Debug.Log(collision.gameObject.name);
         _action?.Invoke(collision.gameObject);
         
         

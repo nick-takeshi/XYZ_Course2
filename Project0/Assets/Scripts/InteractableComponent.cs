@@ -12,4 +12,9 @@ public class InteractableComponent : MonoBehaviour
 
         _action?.Invoke();
     }
+
+    public void DestroyIntComponent()
+    {
+        Destroy(this);
+    }
 }

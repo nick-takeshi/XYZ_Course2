@@ -5362,8 +5362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inverScale: 0
   _speed: 4
-  _jumpSpeed: 10
-  _damgeVelocity: 1
+  _jumpPower: 10.5
+  _damgeVelocity: 5
   _damage: 1
   _groundLayer:
     serializedVersion: 2

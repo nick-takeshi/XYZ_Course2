@@ -14,9 +14,11 @@ GameObject:
   - component: {fileID: 3685544344338880141}
   - component: {fileID: 852932878033495563}
   - component: {fileID: 4881082293176508197}
+  - component: {fileID: 2084866363}
+  - component: {fileID: 2084866364}
   m_Layer: 6
   m_Name: door
-  m_TagString: Untagged
+  m_TagString: door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,9 +164,74 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2084866364}
+        m_TargetAssemblyTypeName: RequireItemComponent, Assembly-CSharp
+        m_MethodName: Check
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2084866363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3685544344338880143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13864e24a5bde234ca09550a1a9e1815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - _valued: You need key...
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
+  _external: {fileID: 0}
+--- !u!114 &2084866364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3685544344338880143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4470d83ba3c2d7c478822d427ff9cd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Key
+  _value: 1
+  _removeAfterUse: 1
+  _onSuccess:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3685544344338880141}
         m_TargetAssemblyTypeName: LoadSecondLevel, Assembly-CSharp
-        m_MethodName: LoadSecondLvl
+        m_MethodName: LoadInSomeSec
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onFail:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2084866363}
+        m_TargetAssemblyTypeName: ShowDialogComponent, Assembly-CSharp
+        m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

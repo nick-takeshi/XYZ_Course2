@@ -39,4 +39,10 @@ MonoBehaviour:
   - Key: button_restart
     Value: "reiniciar\r"
   - Key: button_mainmenu
-    Value: "men\xFA principal"
+    Value: "men\xFA principal\r"
+  - Key: button_gamemenu
+    Value: "men\xFA del juego\r"
+  - Key: button_use
+    Value: "usar\r"
+  - Key: button_buy
+    Value: comprar

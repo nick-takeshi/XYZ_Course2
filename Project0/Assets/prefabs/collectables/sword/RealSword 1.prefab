@@ -125,7 +125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5040951880614509763, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: DestroyParticle
+      value: DestroyObject
       objectReference: {fileID: 0}
     - target: {fileID: 5040951880614509763, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -140,9 +140,17 @@ PrefabInstance:
       value: DectroyObject, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5742785943033662165, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
+      propertyPath: _storeState
+      value: 
+      objectReference: {fileID: 4224375345416695348}
+    - target: {fileID: 5742785943033662165, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
       propertyPath: _objToDestroy
       value: 
       objectReference: {fileID: 8360780191427471758}
+    - target: {fileID: 5742785943033662165, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
+      propertyPath: _timeToDestroy
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
 --- !u!114 &4302358394925632052 stripped
@@ -150,7 +158,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5742785943033662165, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
   m_PrefabInstance: {fileID: 8360780190339989729}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8357977654970411730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5757dcf3ae85777478dccb0e676585b4, type: 3}
@@ -161,12 +169,30 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: -6627070407312735071, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
   m_PrefabInstance: {fileID: 8360780190339989729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8357977654970411730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 575041472433187379, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
+  m_PrefabInstance: {fileID: 8360780190339989729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4224375345416695348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8357977654970411730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91d1bfdbd9a78f40b94f4a3a6daf15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: sword
 --- !u!114 &8511720720656447919 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 151083535558097230, guid: a2d9bd67071f11d4bbf65d3726f0d515, type: 3}
   m_PrefabInstance: {fileID: 8360780190339989729}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8357977654970411730}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bd8ca45c1d11b4b9ca07fa6980a7dc, type: 3}

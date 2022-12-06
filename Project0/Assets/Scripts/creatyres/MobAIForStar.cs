@@ -48,7 +48,6 @@ public class MobAIForStar : MonoBehaviour
         if (_isDead) return;
 
         _target = go;
-        Debug.Log("vision");
 
         StartCoroutine(AgroToHero());
     }

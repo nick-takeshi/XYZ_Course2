@@ -5,27 +5,14 @@ using UnityEngine;
 public class DectroyObject : MonoBehaviour
 {
     [SerializeField] private GameObject _objToDestroy;
-    [SerializeField] private Animator _animator;
-    private static readonly int pickUpKey = Animator.StringToHash("pickup");
-    private static readonly int pickUpPotion = Animator.StringToHash("pickUp");
+    [SerializeField] private RestoreStateComponent _storeState;
+    [SerializeField] private float _timeToDestroy;
     public void DestroyObject()
     {
-        Destroy(_objToDestroy, 0.2f);
-        _animator.SetTrigger(pickUpKey);
-    }
-    public void DestroyPotion()
-    {
-        Destroy(_objToDestroy, 0.5f);
-        _animator.SetTrigger(pickUpPotion);
+        Destroy(_objToDestroy, _timeToDestroy);
+        if (_storeState != null)
+            FindObjectOfType<GameSession>().StoreState(_storeState.Id);
+        Debug.Log("destroy" + gameObject);
     }
 
-    public void DestroyParticle()
-    {
-        Destroy(_objToDestroy);
-    }
-
-    public void DestroyBarrel()
-    {
-        Destroy(_objToDestroy, 0.1f);
-    }
 }

@@ -9,6 +9,9 @@ public class LoadSecondLevel : MonoBehaviour
     public void LoadSecondLvl()
     {
         SceneManager.LoadScene(2);
+        var _session = FindObjectOfType<GameSession>();
+        _session._removedItems.Clear();
+        _session._checkpoints.Clear();
     }
 
     public void LoadInSomeSec()

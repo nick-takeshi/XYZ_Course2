@@ -173,7 +173,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: -4903370854617511059}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyParticle
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -196,7 +196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 7989396264825474856}
-  _animator: {fileID: 0}
+  _storeState: {fileID: 0}
+  _timeToDestroy: 0.01
 --- !u!114 &7220243083329307977
 MonoBehaviour:
   m_ObjectHideFlags: 0

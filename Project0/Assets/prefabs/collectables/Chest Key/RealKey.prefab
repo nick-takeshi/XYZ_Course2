@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4231520918761196035}
   - component: {fileID: 7225098234901294291}
   - component: {fileID: 5173918360260403828}
+  - component: {fileID: 1880577306812117103}
   m_Layer: 0
   m_Name: Key
   m_TagString: Untagged
@@ -145,6 +146,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 4231520918761196035}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: pickup
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4231520918761196033
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +185,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 4231520919309228464}
-  _animator: {fileID: 4231520918761196035}
+  _storeState: {fileID: 1880577306812117103}
+  _timeToDestroy: 0.3
 --- !u!95 &4231520918761196035
 Animator:
   serializedVersion: 4
@@ -315,6 +329,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1880577306812117103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231520918761196037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91d1bfdbd9a78f40b94f4a3a6daf15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: key-y
 --- !u!1 &4231520919309228464
 GameObject:
   m_ObjectHideFlags: 0
