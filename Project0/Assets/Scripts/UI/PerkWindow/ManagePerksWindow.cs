@@ -25,7 +25,7 @@ public class ManagePerksWindow : AnimatedWindow
 
         _trash.Retain(_session.PerksModel.Subscribe(OnPerksChanged));
 
-        _trash.Retain(_buyButton.onClick.Subscribe(OnBuy));
+        //_trash.Retain(_buyButton.onClick.Subscribe(OnBuy));
         _trash.Retain(_useButton.onClick.Subscribe(OnUse));
 
         OnPerksChanged();
@@ -52,13 +52,16 @@ public class ManagePerksWindow : AnimatedWindow
     public void OnUse()
     {
         var selected = _session.PerksModel.InterfaceSelection.Value;
-        _session.PerksModel.UsePerk(selected);
+        _session.PerksModel.SelectPerk(selected);
     }
 
     public void OnBuy()
     {
-        var selected = _session.PerksModel.InterfaceSelection.Value; 
+        var selected = _session.PerksModel.InterfaceSelection.Value;
+        Debug.Log(selected);
+
         _session.PerksModel.Unlock(selected);
+
     }
 
     private void OnDestroy()

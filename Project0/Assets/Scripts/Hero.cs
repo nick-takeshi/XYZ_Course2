@@ -18,6 +18,10 @@ public class Hero : Creature
 
     [SerializeField] private CheckCircleOverlap _interactionCheck;
     [SerializeField] private SpawnComponent _timer;
+    [SerializeField] private ShieldComponent _shield;
+
+
+
     private bool _allowDoubleJump;
     private Rigidbody2D rigid;
     private CapsuleCollider2D coll;
@@ -93,6 +97,7 @@ public class Hero : Creature
     {
         if (!_isGrounded && _allowDoubleJump && _session.PerksModel.IsDoubleJumpSupported)
         {
+            _session.PerksModel.PerkCooldown.Reset();
             _allowDoubleJump = false;
 
             DoJumpVfx();
@@ -116,9 +121,9 @@ public class Hero : Creature
 
     public override void TakeDamage()
     {
-        base.TakeDamage();
-        _health.SetHealth(_session.Data.Hp.Value);
 
+        base.TakeDamage();
+        _session.Data.Hp.Value = _health.Health;
 
     }
     public void Interact()
@@ -272,7 +277,7 @@ public class Hero : Creature
                 _sounds.Play("Heal");
                 break;
                     case Effect.SpeedUp:
-                        _speedUpCooldown.Value = _speedUpCooldown.TimeLasts + potion.Time;
+                        _speedUpCooldown.Value = _speedUpCooldown.RemainingTime + potion.Time;
                         _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
                         _speedUpCooldown.Reset();
                 break;
@@ -291,5 +296,14 @@ public class Hero : Creature
             _additionalSpeed = 0f;
 
         return base.CaplculateSpeed() + _additionalSpeed;
+    }
+
+    public void UsePerk()
+    {
+        if (_session.PerksModel.IsShieldSupported)
+        {
+            _shield.Use();
+            _session.PerksModel.PerkCooldown.Reset();
+        }
     }
 }

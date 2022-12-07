@@ -18,12 +18,12 @@ public class Boomerang : MonoBehaviour
 
         if (_direction == 1)
         {
-            fin = new Vector2(transform.position.x + 2.2f, transform.position.y);
+            fin = new Vector2(transform.position.x + 2.8f, transform.position.y);
             _end = transform.position.x + 2;
         }
         else if (_direction == -1)
         {
-            fin = new Vector2(transform.position.x - 2.2f, transform.position.y);
+            fin = new Vector2(transform.position.x - 2.8f, transform.position.y);
             _end = transform.position.x - 2;
         }
     }

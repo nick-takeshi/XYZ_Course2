@@ -12,7 +12,6 @@ public class DectroyObject : MonoBehaviour
         Destroy(_objToDestroy, _timeToDestroy);
         if (_storeState != null)
             FindObjectOfType<GameSession>().StoreState(_storeState.Id);
-        Debug.Log("destroy" + gameObject);
     }
 
 }

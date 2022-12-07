@@ -8,11 +8,13 @@ public class PerksModel : IDisposable
 
     public readonly StringProperty InterfaceSelection = new StringProperty();
 
+    public readonly Cooldown PerkCooldown = new Cooldown();
+
     private readonly CompositeDisposable _trash = new CompositeDisposable();
 
     public string Used => _data.Perks.Used.Value;
-    public bool IsShieldSupported => _data.Perks.Used.Value == "shield";
-    public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump";
+    public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && PerkCooldown.IsReady;
+    public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump" && PerkCooldown.IsReady;
 
 
     public event Action OnChanged;
@@ -45,8 +47,10 @@ public class PerksModel : IDisposable
         }
     }
 
-    public void UsePerk(string selected)
+    public void SelectPerk(string selected)
     {
+        var perkDef = DefsFacade.I.Perks.Get(selected);
+        PerkCooldown.Value = perkDef.Cooldown;
         _data.Perks.Used.Value = selected;
     }
 

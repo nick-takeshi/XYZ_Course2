@@ -45,4 +45,10 @@ MonoBehaviour:
   - Key: button_use
     Value: "usar\r"
   - Key: button_buy
-    Value: comprar
+    Value: "comprar\r"
+  - Key: text_price
+    Value: "precio\r"
+  - Key: text_double_jump
+    Value: "\xA1Doble salto! Es probable que salte y salte... hop hop\r"
+  - Key: text_shield
+    Value: Cuando lo uses, te da un escudo de 2 segundos

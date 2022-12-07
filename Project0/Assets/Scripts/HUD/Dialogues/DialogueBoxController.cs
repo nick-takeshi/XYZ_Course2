@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DialogueBoxController : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class DialogueBoxController : MonoBehaviour
     private int _currentSentence;
     private AudioSource _sfxSource;
     private Coroutine _typingRoutine;
+    private UnityEvent _onComplete;
 
     protected Sentence CurrentSentence => _data.Sentences[_currentSentence];
 
@@ -30,8 +32,9 @@ public class DialogueBoxController : MonoBehaviour
     }
 
     protected virtual DialogContent CurrentContent => _content;
-    public void ShowDialog(DialogData data)
+    public void ShowDialog(DialogData data, UnityEvent onComplete)
     {
+        _onComplete = onComplete;
         _data = data;
         _currentSentence = 0;
         CurrentContent.Text.text = string.Empty;
@@ -76,6 +79,7 @@ public class DialogueBoxController : MonoBehaviour
         if (isDialogCompleted)
         {
             HideDialogBox();
+            _onComplete?.Invoke();
         }
         else
         {

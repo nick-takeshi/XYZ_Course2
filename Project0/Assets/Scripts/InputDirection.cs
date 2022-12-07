@@ -54,7 +54,15 @@ public class InputDirection : MonoBehaviour
         }
     }
 
-   
+    public void OnUsePerk(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            _hero.UsePerk();
+        }
+    }
+
+
 }
    
     

@@ -15,12 +15,8 @@ public class ChangeHPComponent : MonoBehaviour
 
         if (healthComponent != null)
         {
-            if (target.CompareTag("Player"))
-            {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value -= _damage;
-                healthComponent.ApplyDamage(_damage);
-            }
-            else healthComponent.ApplyDamage(_damage);
+            
+            healthComponent.ApplyDamage(_damage);
 
         }
        

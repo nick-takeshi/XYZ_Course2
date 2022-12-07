@@ -122,7 +122,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 600404024378223302, guid: eb44392061569f54ca9bc42741319f54, type: 3}
+      - m_Target: {fileID: 626897490242889652}
         m_TargetAssemblyTypeName: InventoryAddComponent, Assembly-CSharp
         m_MethodName: Add
         m_Mode: 1

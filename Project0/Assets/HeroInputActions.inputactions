@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "useItem",
+                    "name": "usePerk",
                     "type": "Button",
                     "id": "3014fa8b-f872-4d5b-9838-3c5efd544aaa",
                     "expectedControlType": "Button",
@@ -165,7 +165,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "useItem",
+                    "action": "usePerk",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

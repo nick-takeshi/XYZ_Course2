@@ -1,19 +1,21 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShowDialogComponent : MonoBehaviour
 {
     [SerializeField] private Mode _mode;
     [SerializeField] private DialogData _bound;
     [SerializeField] private DialogDef _external;
+    [SerializeField] private UnityEvent _onComplete;
 
     private DialogueBoxController _dialogBox;
     public void Show()
     {
         _dialogBox = FindDialogController();
 
-        _dialogBox.ShowDialog(Data);
+        _dialogBox.ShowDialog(Data, _onComplete);
     }
     private DialogueBoxController FindDialogController()
     {
