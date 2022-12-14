@@ -12,4 +12,9 @@ public class CallGameMenu : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void Debug()
+    {
+        WindowUtils.CreateWindow("UI/PlayerStatsWindow");
+    }
+
 }

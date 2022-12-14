@@ -15,9 +15,17 @@ public class ChangeHPComponent : MonoBehaviour
 
         if (healthComponent != null)
         {
-            
-            healthComponent.ApplyDamage(_damage);
+            if (transform.parent.gameObject.name == "Hero(Clone)")
+            {
+                var _session = FindObjectOfType<GameSession>(); 
+                var _hero = FindObjectOfType<Hero>();
+                var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
+                damageValue = _hero.ModifyDamageByCrit(damageValue);
+                SetDamage(damageValue);
 
+            }
+            healthComponent.ApplyDamage(_damage);
+            
         }
        
     }
@@ -36,5 +44,10 @@ public class ChangeHPComponent : MonoBehaviour
             }
             else healthComponent.HealHP(_healing);
         }
+    }
+
+    public void SetDamage(int delta)
+    {
+        _damage = delta;
     }
 }

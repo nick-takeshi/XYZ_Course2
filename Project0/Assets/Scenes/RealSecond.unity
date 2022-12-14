@@ -24377,13 +24377,15 @@ MonoBehaviour:
     _inventory:
       _inventory:
       - Id: Coin
-        Value: 16
+        Value: 100
     Hp:
       _value: 10
     Perks:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: check1
   _checkpoints: []
   _removedItems: []
@@ -25738,6 +25740,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692032734}
     m_Modifications:
+    - target: {fileID: 3588786961190711482, guid: a14dd315eaf7f124f8f698258b26849e, type: 3}
+      propertyPath: _invertXScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3588786962048386381, guid: a14dd315eaf7f124f8f698258b26849e, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -26493,7 +26499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1315138697}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.6142254, y: -7.9798164, z: 0}
+  m_LocalPosition: {x: 3.1142254, y: -7.9798164, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26887,7 +26893,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444592297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.928379, y: -7.973045, z: 0}
+  m_LocalPosition: {x: 2.428379, y: -7.973045, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27576,6 +27582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 692032734}
     m_Modifications:
+    - target: {fileID: 3588786961190711482, guid: 18c78e9cf56eb574db524c520d033daf, type: 3}
+      propertyPath: _invertXScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3588786962048386381, guid: 18c78e9cf56eb574db524c520d033daf, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -28711,7 +28721,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114462982}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.16131, y: -7.956928, z: 0}
+  m_LocalPosition: {x: 2.6613102, y: -7.956928, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28980,6 +28990,18 @@ PrefabInstance:
     - target: {fileID: 3118885529975348030, guid: c37c794830ef996489f626f61f735af0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223045612660626150, guid: c37c794830ef996489f626f61f735af0, type: 3}
+      propertyPath: _invertXScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4559384132297369223, guid: c37c794830ef996489f626f61f735af0, type: 3}
+      propertyPath: m_Name
+      value: FootStep
+      objectReference: {fileID: 0}
+    - target: {fileID: 9119983614278522211, guid: c37c794830ef996489f626f61f735af0, type: 3}
+      propertyPath: _invertXScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c37c794830ef996489f626f61f735af0, type: 3}

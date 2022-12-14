@@ -6,17 +6,24 @@ public class SpawnComponent : MonoBehaviour
 {
     [SerializeField] private Transform _target;
     [SerializeField] private GameObject _prefab;
-    [SerializeField] private bool _ivertXScale;
+    [SerializeField] private bool _invertXScale;
 
     [ContextMenu("Spawn")]
     public void Spawn()
     {
-        
-        var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
+
+        SpawnInstance();
+    }
+    public GameObject SpawnInstance()
+    {
+        var instance = SpawnUtils.Spawn(_prefab, _target.position);
 
         var scale = _target.lossyScale;
-        scale.x *= _ivertXScale ? -1 : 1;
-        instantiate.transform.localScale = scale;
+        scale.x *= _invertXScale ? -1 : 1;
+        instance.transform.localScale = scale;
+        instance.SetActive(true);
+
+        return instance;
     }
 
     public void SpawnTimer()

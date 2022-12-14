@@ -172,7 +172,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: -4903370854617511059, guid: df6f68a8dd98b9d4db6076ec2defcbfc, type: 3}
+      - m_Target: {fileID: -4903370854617511059}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
         m_MethodName: DestroyObject
         m_Mode: 1

@@ -51,4 +51,14 @@ MonoBehaviour:
   - Key: text_double_jump
     Value: "Double jump! It's likely jump and jump... hop hop\r"
   - Key: text_shield
-    Value: When use give you a 2 sec shield
+    Value: "When use give you a 2 sec shield\r"
+  - Key: button_upgrade
+    Value: "UPGRADE\r"
+  - Key: text_health
+    Value: "Health\r"
+  - Key: text_speed
+    Value: "Haste\r"
+  - Key: text_range_attack
+    Value: "Range attack\r"
+  - Key: text_crit
+    Value: Critical damage

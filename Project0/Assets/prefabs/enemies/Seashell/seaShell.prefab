@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5074890861433722354}
   _prefab: {fileID: 7989396264825474856, guid: df6f68a8dd98b9d4db6076ec2defcbfc, type: 3}
-  _ivertXScale: 1
+  _invertXScale: 1
 --- !u!1 &3498877659909922179
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  _immune: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:

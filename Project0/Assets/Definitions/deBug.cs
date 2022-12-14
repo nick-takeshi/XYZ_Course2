@@ -6,6 +6,6 @@ public class deBug : MonoBehaviour
 {
     public void Print()
     {
-        Debug.Log("a"); 
+        //Debug.Log("a"); 
     }
 }

@@ -14,3 +14,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventorySize: 5
   _maxHealth: 10
+  _stats:
+  - _name: text_health
+    _id: 0
+    _icon: {fileID: 21300000, guid: 6663ed4d7d814264cbfbb9f0d7b228e7, type: 3}
+    _levels:
+    - _value: 10
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 13
+      _price:
+        _itemId: Coin
+        _count: 5
+    - _value: 16
+      _price:
+        _itemId: Coin
+        _count: 10
+    - _value: 20
+      _price:
+        _itemId: Coin
+        _count: 15
+  - _name: text_speed
+    _id: 1
+    _icon: {fileID: 21300000, guid: 5f19247a8cef6334cbac87973e172d28, type: 3}
+    _levels:
+    - _value: 4
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 5
+      _price:
+        _itemId: Coin
+        _count: 20
+  - _name: text_range_attack
+    _id: 2
+    _icon: {fileID: 21300000, guid: fd8c2b5e7c4b9bc4fa40b0a25e3cfecb, type: 3}
+    _levels:
+    - _value: 1
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 2
+      _price:
+        _itemId: Coin
+        _count: 15
+    - _value: 3
+      _price:
+        _itemId: Coin
+        _count: 25
+  - _name: text_crit
+    _id: 3
+    _icon: {fileID: 21300000, guid: c7651b385eb2bdb45bc303fc5e1ccc06, type: 3}
+    _levels:
+    - _value: 5
+      _price:
+        _itemId: 
+        _count: 0
+    - _value: 10
+      _price:
+        _itemId: Coin
+        _count: 15
+    - _value: 15
+      _price:
+        _itemId: Coin
+        _count: 25
+    - _value: 20
+      _price:
+        _itemId: Coin
+        _count: 25
+    - _value: 25
+      _price:
+        _itemId: Coin
+        _count: 25

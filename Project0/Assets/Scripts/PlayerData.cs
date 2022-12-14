@@ -13,6 +13,8 @@ public class PlayerData
 
     public PerksData Perks = new PerksData();
 
+    public LevelData Levels = new LevelData();
+
     public PlayerData Clone()
     {
         var json = JsonUtility.ToJson(this);

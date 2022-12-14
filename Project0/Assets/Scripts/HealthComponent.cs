@@ -30,8 +30,9 @@ public class HealthComponent : MonoBehaviour
     {
         if (Immune) return;
         if (_health <= 0) return;
+        
 
-
+        
         _health -= damageValue;
 
         _onDamage?.Invoke();

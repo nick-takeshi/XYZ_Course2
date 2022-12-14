@@ -59,10 +59,22 @@ public class Hero : Creature
     {
         _session = FindObjectOfType<GameSession>();
         _session.Data.Inventory.OnChanged += OnInventoryChanged;
+        _session.StatsModel.OnUpgraded += OnHeroUpgraded;
         _health = GetComponent<HealthComponent>();
         _health.SetHealth(_session.Data.Hp.Value);
         UpdateHeroWeapon();
         gameObject.transform.localScale = Vector3.one;
+    }
+    private void OnHeroUpgraded(StatId statId)
+    {
+        switch (statId)
+        {
+            case StatId.Hp:
+                var health = (int)_session.StatsModel.GetValue(statId);
+                _session.Data.Hp.Value = health;
+                _health.SetHealth(health);
+                break;
+        }
     }
 
     private void OnInventoryChanged(string id, int value)
@@ -173,8 +185,31 @@ public class Hero : Creature
         var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
         _throwSpawner.SetPrefab(throwableDef.Projectile);
 
-        _throwSpawner.Spawn();
+        var instance = _throwSpawner.SpawnInstance();
+        ApplyRangeDamageStat(instance);
         _session.Data.Inventory.Remove(throwableId, 1);
+    }
+    private void ApplyRangeDamageStat(GameObject projectile)
+    {
+        var hpModify = projectile.GetComponent<ChangeHPComponent>();
+        var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
+        if (projectile.name == "Hero-PearlProjectile(Clone)") { damageValue += 3; }
+        damageValue = ModifyDamageByCrit(damageValue);
+        hpModify.SetDamage(damageValue);
+    }
+    public int ModifyDamageByCrit(int damage)
+    {
+        var critChance = _session.StatsModel.GetValue(StatId.CriticalDamage);
+        if (Random.value * 100 <= critChance)
+        {
+            Debug.Log("crit");
+            return damage * 2;
+        }
+        else
+        {
+            Debug.Log("no crit");
+            return damage;
+        }
     }
     public void Throw()
     {
@@ -295,7 +330,9 @@ public class Hero : Creature
         if (_speedUpCooldown.IsReady)
             _additionalSpeed = 0f;
 
-        return base.CaplculateSpeed() + _additionalSpeed;
+        var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+
+        return defaultSpeed + _additionalSpeed;
     }
 
     public void UsePerk()
