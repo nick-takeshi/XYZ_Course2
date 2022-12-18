@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca61acfb8bbd1e140824108d5c5a39cc, type: 3}
+  m_Name: Skins
+  m_EditorClassIdentifier: 
+  _collection:
+  - _id: default
+    _icon: {fileID: 21300000, guid: c8db42b185e421048bfef0457a98e0d3, type: 3}
+    _animator: {fileID: 9100000, guid: f4be216814c741349ae5ac69c79cc854, type: 2}
+    _info: text_blue_hat
+    _price:
+      _itemId: Coin
+      _count: 0
+  - _id: Red Hat
+    _icon: {fileID: 21300000, guid: 878166b39bccec14498a6f8b9bca0167, type: 3}
+    _animator: {fileID: 9100000, guid: b0ed73d701d3b974ab2669b389fd1b5f, type: 2}
+    _info: text_red_hat
+    _price:
+      _itemId: Coin
+      _count: 10
+  - _id: Green Dolphin
+    _icon: {fileID: 21300000, guid: 4f4d589c815e2db45b6b011c2398330d, type: 3}
+    _animator: {fileID: 9100000, guid: 35538c6042f8dd943928bb51ae61e96d, type: 2}
+    _info: text_green_dolphin
+    _price:
+      _itemId: Coin
+      _count: 15

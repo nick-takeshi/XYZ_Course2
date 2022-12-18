@@ -15,6 +15,8 @@ public class PlayerData
 
     public LevelData Levels = new LevelData();
 
+    public SkinData Skins = new SkinData();
+
     public PlayerData Clone()
     {
         var json = JsonUtility.ToJson(this);

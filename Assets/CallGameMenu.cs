@@ -14,7 +14,18 @@ public class CallGameMenu : MonoBehaviour
 
     public void Debug()
     {
-        WindowUtils.CreateWindow("UI/PlayerStatsWindow");
+        WindowUtils.CreateWindow("UI/ManageSkinsWindow");
     }
 
+    public void OnShowStats()
+    {
+        WindowUtils.CreateWindow("UI/PlayerStatsWindow");
+
+    }
+
+    public void OnShowSkins()
+    {
+        WindowUtils.CreateWindow("UI/ManageSkinsWindow");
+
+    }
 }

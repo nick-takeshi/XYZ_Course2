@@ -12,6 +12,8 @@ public class Hero : Creature
 
     [SerializeField] private AnimatorController _armed;
     [SerializeField] private AnimatorController _disarmed;
+    [SerializeField] private AnimatorController _armedRedHat;
+    [SerializeField] private AnimatorController _armedGreen;
     [SerializeField] private Cooldown _throwCooldown;
     [SerializeField] private Cooldown _meleeCooldown;
     [SerializeField] private SpawnComponent _throwSpawner;
@@ -24,7 +26,7 @@ public class Hero : Creature
 
     private bool _allowDoubleJump;
     private Rigidbody2D rigid;
-    private CapsuleCollider2D coll;
+    private CircleCollider2D coll;
     private const string SwordId = "Sword";
     private HealthComponent _health;
 
@@ -34,6 +36,7 @@ public class Hero : Creature
     private int CoinCount => _session.Data.Inventory.Count("Coin");
     private int SwordCount => _session.Data.Inventory.Count(SwordId);
     private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
     private bool CanThrow
     {
         get
@@ -52,8 +55,10 @@ public class Hero : Creature
         base.Awake();
         _sprite = GetComponent<SpriteRenderer>();
         rigid = GetComponent<Rigidbody2D>();
-        coll = GetComponent<CapsuleCollider2D>();
-        
+        coll = GetComponent<CircleCollider2D>();
+        _animator = GetComponent<Animator>();
+
+
     }
     private void Start()
     {
@@ -94,9 +99,10 @@ public class Hero : Creature
 
         if (rigid.velocity.x > 0 | rigid.velocity.y > 0)
         {
-            coll.size = new Vector2(0.66f, 0.8f);
-            _animator.SetBool("isDodge", false);
+            EndDodge();
         }
+
+        SetSkin();
     }
     protected override float CalculateYVelocity()
     {
@@ -167,8 +173,22 @@ public class Hero : Creature
     }
     public void UpdateHeroWeapon()
     {
-        _animator = GetComponent<Animator>();
-        _animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _disarmed;
+        if (SwordCount > 0)
+        {
+            if (_session.SkinModel.Used == "Red Hat")
+            {
+                _animator.runtimeAnimatorController = _armedRedHat;
+            }
+            if (_session.SkinModel.Used == "default" | _animator.runtimeAnimatorController == _disarmed)
+            {
+                _animator.runtimeAnimatorController = _armed;
+            }
+        }
+        else
+        {
+            _animator.runtimeAnimatorController = _disarmed;
+        }
+;
     }
     public void NextItem()
     {
@@ -202,12 +222,10 @@ public class Hero : Creature
         var critChance = _session.StatsModel.GetValue(StatId.CriticalDamage);
         if (Random.value * 100 <= critChance)
         {
-            Debug.Log("crit");
             return damage * 2;
         }
         else
         {
-            Debug.Log("no crit");
             return damage;
         }
     }
@@ -222,8 +240,24 @@ public class Hero : Creature
     }
     public void Dodge()
     {
-        coll.size = new Vector2(0.7f, 0.25f);
-        _animator.SetBool("isDodge", true);
+        if (_session.PerksModel.IsDodgeSupported)
+        {
+            coll.radius = 0.06f;
+            coll.offset = new Vector2(0, -0.26f);
+            _animator.SetBool("isDodge", true);
+            _session.PerksModel.PerkCooldown.Reset();
+
+        }
+
+        Invoke("EndDodge", 1.2f);
+    }
+
+    public void EndDodge()
+    {
+        coll.radius = 0.3f;
+        coll.offset = new Vector2(0, -0.03f);
+        _animator.SetBool("isDodge", false);
+
     }
 
     //public void Heal(string id)
@@ -250,7 +284,7 @@ public class Hero : Creature
     //        
     //    }
     //}
-    
+
     //public void OnUsePotion()
     //{
     //    var usableId = _session.QuickInventory.SelectedItem.Id;
@@ -341,6 +375,25 @@ public class Hero : Creature
         {
             _shield.Use();
             _session.PerksModel.PerkCooldown.Reset();
+        }
+    }
+
+    public void SetSkin()
+    {
+        if (_session.SkinModel.Used == "Red Hat")
+        {
+            _animator.runtimeAnimatorController = _armedRedHat;
+            UpdateHeroWeapon();
+        }
+        if (_session.SkinModel.Used == "default")
+        {
+            _animator.runtimeAnimatorController = _armed;
+            UpdateHeroWeapon();
+        }
+        if (_session.SkinModel.Used == "Green Dolphin")
+        {
+            _animator.runtimeAnimatorController = _armedGreen;
+            UpdateHeroWeapon();
         }
     }
 }

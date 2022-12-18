@@ -2688,7 +2688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180081754767363911, guid: 0b1720b8cb763e54e9bdef654a49dedc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.7035675
+      value: -12.44
       objectReference: {fileID: 0}
     - target: {fileID: 7180081754767363911, guid: 0b1720b8cb763e54e9bdef654a49dedc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2790,7 +2790,17 @@ MonoBehaviour:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
+    Skins:
+      _used:
+        _value: default
+      _anim:
+        _value: {fileID: 0}
+      _unlocked:
+      - default
   _defaultCheckPoint: check1
+  _checkpoints: []
   _removedItems: []
 --- !u!114 &619618432 stripped
 MonoBehaviour:
@@ -5295,7 +5305,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 40
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5830,7 +5840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8360780191427471753, guid: 00d4a0202f7bb544a9783b117430a4ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.51
       objectReference: {fileID: 0}
     - target: {fileID: 8360780191427471753, guid: 00d4a0202f7bb544a9783b117430a4ad, type: 3}
       propertyPath: m_LocalPosition.y

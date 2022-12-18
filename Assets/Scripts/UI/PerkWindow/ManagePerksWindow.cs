@@ -58,7 +58,6 @@ public class ManagePerksWindow : AnimatedWindow
     public void OnBuy()
     {
         var selected = _session.PerksModel.InterfaceSelection.Value;
-        Debug.Log(selected);
 
         _session.PerksModel.Unlock(selected);
 

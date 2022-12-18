@@ -386,18 +386,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8518330416807001282, guid: ea37e8f6ab941534d97346a7b9d2f091, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518330416807001282, guid: ea37e8f6ab941534d97346a7b9d2f091, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 8518330417259776069, guid: ea37e8f6ab941534d97346a7b9d2f091, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8518330417259776070, guid: ea37e8f6ab941534d97346a7b9d2f091, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1255,7 +1243,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 597430417}
         m_TargetAssemblyTypeName: CallGameMenu, Assembly-CSharp
-        m_MethodName: Debug
+        m_MethodName: OnShowStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

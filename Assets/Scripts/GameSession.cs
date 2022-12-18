@@ -16,6 +16,7 @@ public class GameSession : MonoBehaviour
     public QuickInventoryModel QuickInventory { get; private set; }
     public PerksModel PerksModel { get; private set; }
     public StatsModel StatsModel { get; private set; }
+    public SkinModel SkinModel { get; private set; }
 
     public List<string> _checkpoints = new List<string>();
 
@@ -69,6 +70,10 @@ public class GameSession : MonoBehaviour
 
         StatsModel = new StatsModel(_data);
         _trash.Retain(StatsModel);
+
+        SkinModel = new SkinModel(_data);
+        _trash.Retain(SkinModel);
+
 
         _data.Hp.Value = (int)StatsModel.GetValue(StatId.Hp);
     }

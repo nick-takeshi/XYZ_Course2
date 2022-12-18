@@ -61,4 +61,8 @@ MonoBehaviour:
   - Key: text_range_attack
     Value: "ataque a distancia\r"
   - Key: text_crit
-    Value: "da\xF1o cr\xEDtico"
+    Value: "da\xF1o cr\xEDtico\r"
+  - Key: text_blue_hat
+    Value: "Sombrero azul regular est\xE1ndar\r"
+  - Key: text_red_hat
+    Value: "\xA1El otro sombrero es el sombrero rojo!"

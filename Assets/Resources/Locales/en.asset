@@ -61,4 +61,8 @@ MonoBehaviour:
   - Key: text_range_attack
     Value: "Range attack\r"
   - Key: text_crit
-    Value: Critical damage
+    Value: "Critical damage\r"
+  - Key: text_blue_hat
+    Value: "Default regular hat\r"
+  - Key: text_red_hat
+    Value: 'Another hat - red hat! '

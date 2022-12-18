@@ -15,6 +15,8 @@ public class PerksModel : IDisposable
     public string Used => _data.Perks.Used.Value;
     public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && PerkCooldown.IsReady;
     public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump" && PerkCooldown.IsReady;
+    public bool IsDodgeSupported => _data.Perks.Used.Value == "dodge" && PerkCooldown.IsReady;
+
 
 
     public event Action OnChanged;

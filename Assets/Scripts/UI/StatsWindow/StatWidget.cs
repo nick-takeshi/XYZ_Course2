@@ -52,6 +52,7 @@ public class StatWidget : MonoBehaviour, IItemRenderer<StatDef>
         var nextLevelValue = statsModel.GetValue(_data.Id, nextLevel);
         var increaseValue = nextLevelValue - currentLevelValue;
         _increaseValue.text = increaseValue.ToString(CultureInfo.InvariantCulture);
+        _increaseValue.text = "+" + _increaseValue.text;
         _increaseValue.gameObject.SetActive(increaseValue > 0);
 
         var maxLevel = DefsFacade.I.Player.GetStat(_data.Id).Levels.Length - 1;
