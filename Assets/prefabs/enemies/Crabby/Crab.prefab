@@ -257,7 +257,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1986643783
+  m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &1760766649
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6406875140090852377}
   _prefab: {fileID: 9202039349556980638, guid: f77a4fc4137a0f64d994d77b26c91ffa, type: 3}
-  _ivertXScale: 0
+  _invertXScale: 0
 --- !u!1 &3118885529975348026
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +537,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -712,7 +712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1246051811114179970}
   _prefab: {fileID: 8022255634176300036, guid: 4c0ea19c961919245b0dd57217a665cc, type: 3}
-  _ivertXScale: 1
+  _invertXScale: 0
 --- !u!114 &1166321400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -726,6 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
+  _immune: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -897,7 +898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 673526921431039632}
   _prefab: {fileID: 5830345374417821535, guid: 6f6e9a3ebc4f066469430d4339c439e2, type: 3}
-  _ivertXScale: 1
+  _invertXScale: 0
 --- !u!1 &5357765084069906064
 GameObject:
   m_ObjectHideFlags: 0
@@ -5717,7 +5718,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5736,7 +5737,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1986643783
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5921,4 +5922,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 7306986220474626210}
   _prefab: {fileID: 9202039349556980638, guid: e723730f4d924814a9666fa680a50c98, type: 3}
-  _ivertXScale: 0
+  _invertXScale: 0

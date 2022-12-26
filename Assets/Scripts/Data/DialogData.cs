@@ -19,11 +19,10 @@ public struct DialogData
 public struct Sentence
 {
     [SerializeField] private string _valued;
-    [SerializeField] private Sprite _icon;
+    [SerializeField] public Sprite _icon;
     [SerializeField] Side _side;
 
     public string Valued => _valued;
-    public Sprite Icon => _icon;
     public Side Side => _side;
 }
 

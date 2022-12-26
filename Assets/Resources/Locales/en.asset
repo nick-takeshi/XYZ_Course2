@@ -65,4 +65,16 @@ MonoBehaviour:
   - Key: text_blue_hat
     Value: "Default regular hat\r"
   - Key: text_red_hat
-    Value: 'Another hat - red hat! '
+    Value: "Another hat - red hat! \r"
+  - Key: text_npc_1
+    Value: "Hello, buddy, help my brother get revenge\r"
+  - Key: text_npc_2
+    Value: "Absolutly for nothing\r"
+  - Key: text_npc_3
+    Value: "Use Q to select item and Shift to use it\r"
+  - Key: text_npc_4
+    Value: "You want some skins?\r"
+  - Key: text_dodge
+    Value: "Use to avoid the enemy attack\r"
+  - Key: text_green_dolphin
+    Value: Green Dolphin. Why dolphin? IDK

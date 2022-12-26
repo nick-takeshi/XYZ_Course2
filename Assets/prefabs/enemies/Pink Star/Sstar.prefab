@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5401341841233689741}
   _prefab: {fileID: 4002573873482287411, guid: c5a9bd1a810e413459b1a4ed1b11a9de, type: 3}
-  _ivertXScale: 1
+  _invertXScale: 0
 --- !u!1 &6242261758481373307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5147,7 +5147,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5166,7 +5166,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1986643783
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -5244,7 +5244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6242261759085697862}
   _prefab: {fileID: 5830345374417821535, guid: 6f6e9a3ebc4f066469430d4339c439e2, type: 3}
-  _ivertXScale: 1
+  _invertXScale: 0
 --- !u!1 &6242261759454945021
 GameObject:
   m_ObjectHideFlags: 0
@@ -5314,7 +5314,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5359,8 +5359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inverScale: 1
-  speed: 1
-  _jumpSpeed: 5
+  _speed: 0
+  _jumpPower: 0
   _damgeVelocity: 1
   _damage: 2
   _groundLayer:
@@ -5441,6 +5441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
+  _immune: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -5565,7 +5566,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objToDestroy: {fileID: 6242261759454945021}
-  _animator: {fileID: 6242261759454944901}
+  _storeState: {fileID: 0}
+  _timeToDestroy: 0
 --- !u!114 &8026324153185048818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5594,7 +5596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e533f58a74865344780935e920b6b0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _source: {fileID: 0}
   _sounds: []
 --- !u!1 &6901679238407481128
 GameObject:
@@ -5655,7 +5656,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 1986643783
+  m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &6836359466301363411

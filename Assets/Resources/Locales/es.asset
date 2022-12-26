@@ -65,4 +65,16 @@ MonoBehaviour:
   - Key: text_blue_hat
     Value: "Sombrero azul regular est\xE1ndar\r"
   - Key: text_red_hat
-    Value: "\xA1El otro sombrero es el sombrero rojo!"
+    Value: "\xA1El otro sombrero es el sombrero rojo!\r"
+  - Key: text_npc_1
+    Value: "Hola, amigo, ayuda a mi hermano a vengarse.\r"
+  - Key: text_npc_2
+    Value: "Absolutamente por nada\r"
+  - Key: text_npc_3
+    Value: "Use Q para seleccionar el elemento y Shift para usarlo\r"
+  - Key: text_npc_4
+    Value: "\xBFQuieres algunas pieles?\r"
+  - Key: text_dodge
+    Value: "\xDAsalo para evitar el ataque de los enemigos.\r"
+  - Key: text_green_dolphin
+    Value: "Delf\xEDn verde. \xBFPor qu\xE9 delf\xEDn? NO S\xC9"

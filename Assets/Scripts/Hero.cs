@@ -29,6 +29,7 @@ public class Hero : Creature
     private CircleCollider2D coll;
     private const string SwordId = "Sword";
     private HealthComponent _health;
+    private CameraShakeEffect _cameraShake;
 
 
     public GameSession _session;
@@ -36,6 +37,7 @@ public class Hero : Creature
     private int CoinCount => _session.Data.Inventory.Count("Coin");
     private int SwordCount => _session.Data.Inventory.Count(SwordId);
     private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
 
     private bool CanThrow
     {
@@ -69,6 +71,7 @@ public class Hero : Creature
         _health.SetHealth(_session.Data.Hp.Value);
         UpdateHeroWeapon();
         gameObject.transform.localScale = Vector3.one;
+        _cameraShake = FindObjectOfType<CameraShakeEffect>();
     }
     private void OnHeroUpgraded(StatId statId)
     {
@@ -141,6 +144,7 @@ public class Hero : Creature
     {
 
         base.TakeDamage();
+        _cameraShake.Shake();
         _session.Data.Hp.Value = _health.Health;
 
     }

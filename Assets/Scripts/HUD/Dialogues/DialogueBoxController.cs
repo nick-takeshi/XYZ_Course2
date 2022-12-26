@@ -53,7 +53,12 @@ public class DialogueBoxController : MonoBehaviour
         CurrentContent.Text.text = string.Empty;
         var sentence = _data.Sentences[_currentSentence];
 
-        foreach (var letter in sentence.Valued)
+        CurrentContent.TrySetIcon(sentence._icon);
+
+
+        var localizedSentence = LocalizationManager.I.Localize(sentence.Valued);
+
+        foreach (var letter in localizedSentence)
         {
             CurrentContent.Text.text += letter;
             _sfxSource?.PlayOneShot(_typing);
@@ -66,8 +71,10 @@ public class DialogueBoxController : MonoBehaviour
     public void OnSkip()
     {
         if (_typingRoutine == null) return;
+
         StopTypeAnimation();
-        CurrentContent.Text.text = _data.Sentences[_currentSentence].Valued;
+        var localizedSentence = LocalizationManager.I.Localize(_data.Sentences[_currentSentence].Valued);
+        CurrentContent.Text.text = localizedSentence;
     }
 
     public void OnContinue()
