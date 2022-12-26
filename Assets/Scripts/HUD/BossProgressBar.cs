@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ProgressBar : MonoBehaviour
+
+public class BossProgressBar : MonoBehaviour
 {
     [SerializeField] private Image _bar;
 
-    public void SetProgress(float progress)
+    public void SetBossProgress(float progress)
     {
         _bar.fillAmount = progress;
     }
-   
 }

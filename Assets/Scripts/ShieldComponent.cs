@@ -9,7 +9,7 @@ public class ShieldComponent : MonoBehaviour
 
     public void Use()
     {
-        _health.Immune = true;
+        _health.Immune.Retain(this);
         _cooldown.Reset();
         gameObject.SetActive(true);
     }
@@ -22,6 +22,6 @@ public class ShieldComponent : MonoBehaviour
 
     private void OnDisable()
     {
-        _health.Immune = false;
+        _health.Immune.Release(this);
     }
 }

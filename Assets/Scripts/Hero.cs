@@ -30,11 +30,17 @@ public class Hero : Creature
     private const string SwordId = "Sword";
     private HealthComponent _health;
     private CameraShakeEffect _cameraShake;
+    
+    [SerializeField] private HeroFlashlight _flashlight;
 
+    public void ToggleFlashlight()
+    {
+        var isActive = _flashlight.gameObject.activeSelf;
+        _flashlight.gameObject.SetActive(!isActive);
+    }
 
     public GameSession _session;
 
-    private int CoinCount => _session.Data.Inventory.Count("Coin");
     private int SwordCount => _session.Data.Inventory.Count(SwordId);
     private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
 

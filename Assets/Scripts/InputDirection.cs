@@ -61,6 +61,11 @@ public class InputDirection : MonoBehaviour
             _hero.UsePerk();
         }
     }
+    public void OnToggleFlashlight(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            _hero.ToggleFlashlight();
+    }
 
 
 }

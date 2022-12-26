@@ -6,21 +6,19 @@ using UnityEngine.Events;
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField] private int _health;
-    [SerializeField] private bool _immune;
-    [SerializeField] private UnityEvent _onDamage;
+    [SerializeField] public UnityEvent _onDamage;
     [SerializeField] public UnityEvent _onDie;
     [SerializeField] private UnityEvent _onHealing;
     [SerializeField] public HealthChangeEvent _onChange;
+    private Lock _immune = new Lock();
+
 
     private GameSession _session;
 
 
     public int Health => _health;
-    public bool Immune
-    {
-        get => _immune;
-        set => _immune = value;
-    }
+    public Lock Immune => _immune;
+    
 
     public void Start()
     {
@@ -28,7 +26,7 @@ public class HealthComponent : MonoBehaviour
     }
     public void ApplyDamage(int damageValue)
     {
-        if (Immune) return;
+        if (Immune.IsLocked) return;
         if (_health <= 0) return;
         
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossHpWidget : MonoBehaviour
 {
     [SerializeField] private HealthComponent _health;
-    [SerializeField] private ProgressBar _hpBar;
+    [SerializeField] private BossProgressBar _hpBar;
     [SerializeField] private CanvasGroup _canvas;
 
     private readonly CompositeDisposable _trash = new CompositeDisposable();
@@ -36,7 +36,7 @@ public class BossHpWidget : MonoBehaviour
 
     private void OnHpChanged(int hp)
     {
-        _hpBar.SetProgress(hp / _maxHealth);
+        _hpBar.SetBossProgress(hp / _maxHealth);
     }
 
     private void OnDestroy()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossHUDController : MonoBehaviour
 {
-    [SerializeField] private ProgressBar _healthBar;
+    [SerializeField] private BossProgressBar _healthBar;
 
 
     private readonly CompositeDisposable _trash = new CompositeDisposable();
@@ -24,7 +24,7 @@ public class BossHUDController : MonoBehaviour
         //var maxHealth = DefsFacade.I.Player.MaxHealth;
         var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
         var value = (float)newValue / maxHealth;
-        _healthBar.SetProgress(value);
+       // _healthBar.SetBossProgress(value);
     }
 
     private void OnDestroy()

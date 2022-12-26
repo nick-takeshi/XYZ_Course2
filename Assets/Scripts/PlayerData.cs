@@ -17,6 +17,8 @@ public class PlayerData
 
     public SkinData Skins = new SkinData();
 
+    public FloatProperty Fuel = new FloatProperty();
+
     public PlayerData Clone()
     {
         var json = JsonUtility.ToJson(this);
