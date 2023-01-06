@@ -98,12 +98,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: -1205491552, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
-  - {fileID: -209123091, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
-  - {fileID: 1599937799, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
-  - {fileID: -1909478632, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+  _clips:
+  - _name: 
+    _sprites:
+    - {fileID: -1205491552, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
+    - {fileID: -209123091, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
+    - {fileID: 1599937799, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
+    - {fileID: -1909478632, guid: 51331d110589c274b8e3a307de6f4682, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []

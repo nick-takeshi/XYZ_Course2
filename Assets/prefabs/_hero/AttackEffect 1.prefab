@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 216410002369743319}
   - component: {fileID: 5587098971471967802}
   - component: {fileID: 5695044029305265751}
-  - component: {fileID: 7141894895744229073}
+  - component: {fileID: -8268300939571180737}
   m_Layer: 0
   m_Name: AttackEffect 1
   m_TagString: Untagged
@@ -99,16 +99,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 0
-  _sprites:
-  - {fileID: 21300000, guid: 4a636e034fab9ec42b2b8d1304123323, type: 3}
-  - {fileID: 21300000, guid: 204e6d4326dc5a743b69b111050587d0, type: 3}
-  - {fileID: 21300000, guid: d972d896e4d8d3e429a1573dbced324a, type: 3}
-  - {fileID: 21300000, guid: 40c0900602aef1248bb03895e44aba78, type: 3}
   _onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7141894895744229073}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
         m_MethodName: DestroyObject
         m_Mode: 1
@@ -120,7 +114,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7141894895744229073
+  _clips:
+  - _name: attack
+    _sprites:
+    - {fileID: 21300000, guid: 4a636e034fab9ec42b2b8d1304123323, type: 3}
+    - {fileID: 21300000, guid: 204e6d4326dc5a743b69b111050587d0, type: 3}
+    - {fileID: 21300000, guid: d972d896e4d8d3e429a1573dbced324a, type: 3}
+    - {fileID: 21300000, guid: 40c0900602aef1248bb03895e44aba78, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -8268300939571180737}
+          m_TargetAssemblyTypeName: PoolItem, Assembly-CSharp
+          m_MethodName: Release
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &-8268300939571180737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,9 +147,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 4002573873482287411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5757dcf3ae85777478dccb0e676585b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a94cf4b5c2780e4429799e628722201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objToDestroy: {fileID: 4002573873482287411}
-  _storeState: {fileID: 0}
-  _timeToDestroy: 0.1
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5695044029305265751}
+        m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: attack
+          m_BoolArgument: 0
+        m_CallState: 2

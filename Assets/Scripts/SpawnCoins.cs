@@ -7,6 +7,7 @@ public class SpawnCoins : MonoBehaviour
     [SerializeField] private Transform _target;
     [SerializeField] private GameObject _prefabSilver;
     [SerializeField] private GameObject _prefabGolden;
+    [SerializeField] private GameObject _object;
     [SerializeField] private int _powerOfJump;
     [SerializeField] private int _numberOfSilverCoins;
     [SerializeField] private int _numberOfGoldenCoins;
@@ -43,5 +44,11 @@ public class SpawnCoins : MonoBehaviour
         }
 
         
+    }
+
+    public void SpawnSmth()
+    {
+        var instantiate = Instantiate(_object, _target.position, Quaternion.identity);
+        //instantiate.transform.localScale = _target.lossyScale;
     }
 }

@@ -183,7 +183,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -219,6 +219,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1063,12 +1075,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Patric_26: -5660417143903998036
-      Patric_31: 5313534277958279983
+      Patric_32: 6871045095198256065
       Patric_5: -9084912452087648884
       Patric_6: -8343462353704588372
       Patric_38: 6384462652563809282
       Patric_27: 8122258944036600684
-      Patric_32: 6871045095198256065
+      Patric_7: -544956165492079743
       Patric_29: 4289065198383074631
       Patric_37: -1716483664407934345
       Patric_1: 2730764555306426954
@@ -1098,8 +1110,8 @@ TextureImporter:
       Patric_24: 1141322216187628762
       Patric_23: -7727101525452084109
       Patric_33: 6584985522317171522
-      Patric_7: -544956165492079743
       Patric_22: -4629638608183935849
+      Patric_31: 5313534277958279983
       Patric_30: 86831731946154089
   spritePackingTag: 
   pSDRemoveMatte: 0

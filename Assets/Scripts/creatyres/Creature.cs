@@ -17,6 +17,7 @@ public class Creature : MonoBehaviour
     [SerializeField] protected SpawnListComponent _particles;
     [SerializeField] protected SpawnComponent _JumpParticles;
     [SerializeField] protected LayerCheck _groundCheck;
+    [SerializeField] private bool _isBig;
 
     protected Vector2 _direction;
     protected Rigidbody2D _rigidbody;
@@ -108,16 +109,33 @@ public class Creature : MonoBehaviour
     }
     public void UpdateSpriteDir(Vector2 direction)
     {
-        var multiplier = _inverScale ? -1 : 1;
-        if (direction.x > 0)
+        if (_isBig)
         {
-            transform.localScale = new Vector3(multiplier, 1, 1);
-            _sprite.flipX = false;
+            var multiplier = _inverScale ? -2 : 2;
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(multiplier, 2, 2);
+                _sprite.flipX = false;
+            }
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1 * multiplier, 2, 2);
+            }
         }
-        else if (direction.x < 0)
+        else
         {
-            transform.localScale = new Vector3(-1 * multiplier, 1, 1);
+            var multiplier = _inverScale ? -1 : 1;
+            if (direction.x > 0)
+            {
+                transform.localScale = new Vector3(multiplier, 1, 1);
+                _sprite.flipX = false;
+            }
+            else if (direction.x < 0)
+            {
+                transform.localScale = new Vector3(-1 * multiplier, 1, 1);
+            }
         }
+        
     }
     public virtual void TakeDamage()
     {

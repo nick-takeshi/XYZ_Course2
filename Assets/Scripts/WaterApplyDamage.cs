@@ -21,7 +21,6 @@ public class WaterApplyDamage : MonoBehaviour
     public IEnumerator Damage()
     {
         var _hero = FindObjectOfType<Hero>();
-        Debug.Log(_isDry);
 
         while (_isDry)
         {

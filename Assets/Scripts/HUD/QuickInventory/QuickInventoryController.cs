@@ -11,8 +11,11 @@ public class QuickInventoryController : MonoBehaviour
 
     private GameSession _session;
     private List<InnventoryItemVidget> _createdItem = new List<InnventoryItemVidget>();
+
+    private DataGroup<InventoryItemData, InnventoryItemVidget> _dataGroup;
     private void Start()
     {
+        _dataGroup = new DataGroup<InventoryItemData, InnventoryItemVidget>(_prefab, _container);
         _session = FindObjectOfType<GameSession>();
         _trash.Retain(_session.QuickInventory.Subscribe(Rebuild));
         Rebuild();
@@ -21,28 +24,29 @@ public class QuickInventoryController : MonoBehaviour
     public void Rebuild()
     {
         var _inventory = _session.QuickInventory.Inventory;
+        _dataGroup.SetData(_inventory);
 
-        // create require items
+        //// create require items
 
-        for (var i = _createdItem.Count; i < _inventory.Length; i++)
-        {
-            var item = Instantiate(_prefab, _container);
-            _createdItem.Add(item);
-        }
+        //for (var i = _createdItem.Count; i < _inventory.Length; i++)
+        //{
+        //    var item = Instantiate(_prefab, _container);
+        //    _createdItem.Add(item);
+        //}
 
-        // update data and activate
+        //// update data and activate
 
-        for (var i = 0; i < _inventory.Length; i++)
-        {
-            _createdItem[i].SetData(_inventory[i], i);
-            _createdItem[i].gameObject.SetActive(true);
-        }
+        //for (var i = 0; i < _inventory.Length; i++)
+        //{
+        //    _createdItem[i].SetData(_inventory[i], i);
+        //    _createdItem[i].gameObject.SetActive(true);
+        //}
 
-        //hide unused items
-        for (var i = _inventory.Length; i < _createdItem.Count; i++)
-        {
-            _createdItem[i].gameObject.SetActive(false);
-        }
+        ////hide unused items
+        //for (var i = _inventory.Length; i < _createdItem.Count; i++)
+        //{
+        //    _createdItem[i].gameObject.SetActive(false);
+        //}
     }
 
     private void OnDestroy()

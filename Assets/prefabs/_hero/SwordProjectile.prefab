@@ -106,15 +106,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _frameRate: 10
-  _loop: 1
-  _sprites:
-  - {fileID: 21300000, guid: 7314991fc5711df4fb2faec5552859cc, type: 3}
-  - {fileID: 21300000, guid: 770ae93a97fd49b46b30ba764a645bb8, type: 3}
-  - {fileID: 21300000, guid: 9ae62c8091fadb142a5e3d84fb078252, type: 3}
-  - {fileID: 21300000, guid: cd55d6b1ff6c2324687e71d860077365, type: 3}
   _onComplete:
     m_PersistentCalls:
       m_Calls: []
+  _clips:
+  - _name: fly
+    _sprites:
+    - {fileID: 21300000, guid: 335b9f945583bad40bdf613df72d5804, type: 3}
+    - {fileID: 21300000, guid: 1107659290e58eb4c9618ccd9c74b862, type: 3}
+    - {fileID: 21300000, guid: 8028465775f431e419176df87f52b7d9, type: 3}
+    - {fileID: 21300000, guid: b5f28007537e15049b3c6e804bb8e34e, type: 3}
+    _loop: 1
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!114 &7141894895744229073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0880a62a7836da547bf1a7264a1d687f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 8
+  _speed: 9
 --- !u!114 &-7690873655664765222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,3 +333,4 @@ MonoBehaviour:
   _target: {fileID: 2031256359579842637}
   _prefab: {fileID: 4002573873482287411, guid: 4c9fa909fed5dbe43b6a85b70aaa5dab, type: 3}
   _invertXScale: 0
+  _usePool: 0

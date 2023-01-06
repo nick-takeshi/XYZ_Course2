@@ -47,6 +47,7 @@ MonoBehaviour:
   _target: {fileID: 1076015777}
   _prefab: {fileID: 4002573873482287411, guid: 1184344cb00182e48aaa78caf5d0a6cb, type: 3}
   _invertXScale: 0
+  _usePool: 1
 --- !u!1 &1153716299
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,7 +328,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 27694f7b4d61a714c8c5908a798d008b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -379,7 +380,7 @@ MonoBehaviour:
   m_Intensity: 1.16
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 000000002b4175cb47c76976e3760953235e3212
+  m_ApplyToSortingLayers: ff17ab1d159024352b4175cb47c7697600000000235e3212e3760953
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -5369,6 +5370,7 @@ MonoBehaviour:
   _target: {fileID: 4162395560721027293}
   _prefab: {fileID: 5830345374417821535, guid: 6f6e9a3ebc4f066469430d4339c439e2, type: 3}
   _invertXScale: 0
+  _usePool: 1
 --- !u!1 &4162395561191265248
 GameObject:
   m_ObjectHideFlags: 0
@@ -5498,6 +5500,7 @@ MonoBehaviour:
   _target: {fileID: 4162395561659148562}
   _prefab: {fileID: 5166273139262204250, guid: 5ef51ef715e2277489d45f82e7b5e3bf, type: 3}
   _invertXScale: 0
+  _usePool: 0
 --- !u!1 &4162395562221752690
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,6 +5548,7 @@ MonoBehaviour:
   _target: {fileID: 4162395562221752691}
   _prefab: {fileID: 6094461014462490211, guid: e0b096e675d7e82428c337bacbc117fe, type: 3}
   _invertXScale: 0
+  _usePool: 1
 --- !u!1 &4162395562633549158
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,3 +6193,4 @@ MonoBehaviour:
   _target: {fileID: 9083919367234943171}
   _prefab: {fileID: 4002573873482287411, guid: 19161064cbf713745a0b4408624aadbc, type: 3}
   _invertXScale: 0
+  _usePool: 0

@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9139071424400458410}
   - component: {fileID: 8036803006035146156}
-  - component: {fileID: -4052844323893494018}
-  - component: {fileID: 1653955634544934192}
+  - component: {fileID: 8298684201140872047}
+  - component: {fileID: -8600446456405103597}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1986643783
-  m_SortingLayer: 1
+  m_SortingLayer: -1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 074507c084de72d4990d83533c488f23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4052844323893494018
+--- !u!114 &8298684201140872047
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,31 +98,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7780d9d2d7282e343ba222fdf79b3377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _frameRate: 15
-  _loop: 0
-  _sprites:
-  - {fileID: 21300000, guid: 074507c084de72d4990d83533c488f23, type: 3}
-  - {fileID: 21300000, guid: ab2f44608e01e5d4f94bd4bd0a7cf488, type: 3}
-  - {fileID: 21300000, guid: 9c0f63858f4571442a5d3992736d87c7, type: 3}
-  - {fileID: 21300000, guid: d035c7b63a630374dacbdd3d0954a4ac, type: 3}
-  - {fileID: 21300000, guid: 88ecd9ae233ad454ea8f07c7a0168c03, type: 3}
-  - {fileID: 21300000, guid: e083ae70b8f2345468c00938f051f7d7, type: 3}
+  _frameRate: 10
   _onComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1653955634544934192}
-        m_TargetAssemblyTypeName: DectroyObject, Assembly-CSharp
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 6094461014462490211}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1653955634544934192
+  _clips:
+  - _name: jump
+    _sprites:
+    - {fileID: 21300000, guid: 074507c084de72d4990d83533c488f23, type: 3}
+    - {fileID: 21300000, guid: ab2f44608e01e5d4f94bd4bd0a7cf488, type: 3}
+    - {fileID: 21300000, guid: 9c0f63858f4571442a5d3992736d87c7, type: 3}
+    - {fileID: 21300000, guid: d035c7b63a630374dacbdd3d0954a4ac, type: 3}
+    - {fileID: 21300000, guid: 88ecd9ae233ad454ea8f07c7a0168c03, type: 3}
+    _loop: 0
+    _allowNextClip: 0
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: -8600446456405103597}
+          m_TargetAssemblyTypeName: PoolItem, Assembly-CSharp
+          m_MethodName: Release
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: jump
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &-8600446456405103597
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,9 +148,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6094461014462490211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5757dcf3ae85777478dccb0e676585b4, type: 3}
+  m_Script: {fileID: 11500000, guid: a94cf4b5c2780e4429799e628722201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objToDestroy: {fileID: 6094461014462490211}
-  _storeState: {fileID: 0}
-  _timeToDestroy: 0.15
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8298684201140872047}
+        m_TargetAssemblyTypeName: SpriteAnimation, Assembly-CSharp
+        m_MethodName: SetClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: jump
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName ="Data/PlayerDef", fileName ="PlayerDef")]
@@ -13,5 +11,17 @@ public class PlayerDef : ScriptableObject
     public int MaxHealth => _maxHealth;
     public StatDef[] Stats => _stats;
 
-    public StatDef GetStat(StatId id) => _stats.FirstOrDefault(x => x.Id == id);
+    public StatDef GetStat(StatId id)
+    {
+        foreach (var statDef in _stats)
+        {
+            if (statDef.Id == id)
+            {
+                return statDef;
+            }
+        }
+        return default;
+
+    }
+    //=> _stats.FirstOrDefault(x => x.Id == id);
 }

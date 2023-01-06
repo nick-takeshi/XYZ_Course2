@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BG-atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 512
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 554e151bf303f7b4c9ebafbbcead9878, type: 3}
+    - {fileID: 2800000, guid: a67134b6d2edc6d4bb765c557107b6fd, type: 3}
+    - {fileID: 2800000, guid: 1c4a3bab4bfedb34980b73edcba369e4, type: 3}
+    - {fileID: 2800000, guid: d35e1b85138b47643b673a40cca216bc, type: 3}
+    - {fileID: 2800000, guid: 715aad651b5c1c94e8da33b5b5ed6192, type: 3}
+    - {fileID: 2800000, guid: 28bf9d70dc8aef647ad744d7902192fb, type: 3}
+    - {fileID: 2800000, guid: 5d3e57a5540aaed479fad2bbc7624370, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 28bf9d70dc8aef647ad744d7902192fb, type: 3}
+  - {fileID: 21300000, guid: 715aad651b5c1c94e8da33b5b5ed6192, type: 3}
+  - {fileID: 21300000, guid: d35e1b85138b47643b673a40cca216bc, type: 3}
+  - {fileID: 21300000, guid: 5d3e57a5540aaed479fad2bbc7624370, type: 3}
+  - {fileID: 21300000, guid: a67134b6d2edc6d4bb765c557107b6fd, type: 3}
+  - {fileID: 21300000, guid: 554e151bf303f7b4c9ebafbbcead9878, type: 3}
+  - {fileID: 21300000, guid: 1c4a3bab4bfedb34980b73edcba369e4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0005_\u0421\u043B\u043E\u0439-3"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0004_\u0421\u043B\u043E\u0439-4"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0003_\u0421\u043B\u043E\u0439-5"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0006_\u0421\u043B\u043E\u0439-1"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0001_\u0421\u043B\u043E\u0439-7"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0000_\u0421\u043B\u043E\u0439-8"
+  - "\u0411\u0435\u0437-\u0438\u043C\u0435\u043D\u0438-2_0002_\u0421\u043B\u043E\u0439-6"
+  m_RenderDataMap: {}
+  m_Tag: BG-atlas
+  m_IsVariant: 0

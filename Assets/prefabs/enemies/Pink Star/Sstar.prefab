@@ -214,6 +214,7 @@ MonoBehaviour:
   _target: {fileID: 5401341841233689741}
   _prefab: {fileID: 4002573873482287411, guid: c5a9bd1a810e413459b1a4ed1b11a9de, type: 3}
   _invertXScale: 0
+  _usePool: 1
 --- !u!1 &6242261758481373307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5244,7 +5245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 6242261759085697862}
   _prefab: {fileID: 5830345374417821535, guid: 6f6e9a3ebc4f066469430d4339c439e2, type: 3}
-  _invertXScale: 0
+  _invertXScale: 1
+  _usePool: 1
 --- !u!1 &6242261759454945021
 GameObject:
   m_ObjectHideFlags: 0
@@ -5359,7 +5361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inverScale: 1
-  _speed: 0
+  _speed: 1
   _jumpPower: 0
   _damgeVelocity: 1
   _damage: 2
@@ -5441,7 +5443,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
-  _immune: 0
   _onDamage:
     m_PersistentCalls:
       m_Calls:
@@ -5552,7 +5553,7 @@ MonoBehaviour:
     _value: 0
   _misDelay:
     _value: 0
-  _speedIncrease: 1
+  _speedIncrease: 0.5
 --- !u!114 &8026324153901007471
 MonoBehaviour:
   m_ObjectHideFlags: 0
