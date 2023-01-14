@@ -234,9 +234,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.02, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.31
+  m_Radius: 0.23326428
 --- !u!114 &4405397125770155408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5642,7 +5642,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_Sprite: {fileID: 349711692, guid: 038db973f3c4f964ea7a08bb4a389b44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5678,6 +5678,7 @@ MonoBehaviour:
   _particles: {fileID: 1392716167}
   _JumpParticles: {fileID: 4162395562221752684}
   _groundCheck: {fileID: 4405397125770155408}
+  _isBig: 0
   radius: 1
   _particle: {fileID: 4162395560588544934}
   _interactionLayer:
@@ -6171,7 +6172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5669004932941531156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.423, y: -0.019, z: 0}
+  m_LocalPosition: {x: 0.423, y: 0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

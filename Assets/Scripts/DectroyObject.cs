@@ -14,4 +14,10 @@ public class DectroyObject : MonoBehaviour
             FindObjectOfType<GameSession>().StoreState(_storeState.Id);
     }
 
+    public void DestroyTrigger()
+    {
+        var trig = FindObjectOfType<EnterTrigger>();
+        Destroy(trig);
+    }
+
 }

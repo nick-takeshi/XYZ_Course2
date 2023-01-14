@@ -72,7 +72,6 @@ public class ShootingTrapAI : MonoBehaviour
         _getPearl.SetActive(true);
         _getPearl.layer = 0;
 
-        var script = FindObjectOfType<ShootingTrapAI>();
-        Destroy(script);
+        Destroy(GetComponent<ShootingTrapAI>());
     }
 }

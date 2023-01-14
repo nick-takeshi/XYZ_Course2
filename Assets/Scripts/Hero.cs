@@ -30,6 +30,8 @@ public class Hero : Creature
     private const string SwordId = "Sword";
     private HealthComponent _health;
     private CameraShakeEffect _cameraShake;
+    private float _maxHealth = 10;
+    [SerializeField] private HeroProgressBar _progress;
     
     [SerializeField] private HeroFlashlight _flashlight;
 
@@ -78,15 +80,22 @@ public class Hero : Creature
         UpdateHeroWeapon();
         gameObject.transform.localScale = Vector3.one;
         _cameraShake = FindObjectOfType<CameraShakeEffect>();
+        _progress = FindObjectOfType<HeroProgressBar>();
     }
     private void OnHeroUpgraded(StatId statId)
     {
         switch (statId)
         {
             case StatId.Hp:
-                var health = (int)_session.StatsModel.GetValue(statId);
-                _session.Data.Hp.Value = health;
-                _health.SetHealth(health);
+                _maxHealth = (int)_session.StatsModel.GetValue(statId);
+                Debug.Log("max" + _maxHealth);
+                _progress.SetProgress(_session.Data.Hp.Value / _maxHealth);
+                Debug.Log(_session.Data.Hp.Value);
+                Debug.Log(_maxHealth);
+                Debug.Log(_session.Data.Hp.Value / _maxHealth);
+
+                //_session.Data.Hp.Value = health;
+                //_health.SetHealth(health);
                 break;
         }
     }
@@ -270,65 +279,6 @@ public class Hero : Creature
 
     }
 
-    //public void Heal(string id)
-    //{
-    //    if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "BigHealPotion")
-    //    {
-    //        _session.Data.Inventory.Remove(id, 1);
-    //        Healing(8);
-    //    }
-    //    else if (_session.Data.Inventory.Count(id) > 0 & _session.QuickInventory.SelectedItem.Id == "HealPotion")
-    //    {
-    //        _session.Data.Inventory.Remove(id, 1);
-    //        Healing(5);
-    //    }
-    //    else return;
-    //}
-    //public void Healing(int value)
-    //{
-    //    var healthComponent = GetComponent<HealthComponent>();
-    //    if (healthComponent != null)
-    //    {
-    //        healthComponent.HealHP(value);
-    //        GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>()._session.Data.Hp.Value += value;
-    //        
-    //    }
-    //}
-
-    //public void OnUsePotion()
-    //{
-    //    var usableId = _session.QuickInventory.SelectedItem.Id;
-
-    //    if (usableId == "BigHealPotion")
-    //    {
-    //        Heal(usableId);
-    //    }
-    //    else if (usableId == "HealPotion")
-    //    {
-    //        Heal(usableId);
-    //    }
-    //    else if(usableId == "SpeedPotion")
-    //    {
-    //        IncreaseSpeed();
-    //    }
-    //}
-    //public void IncreaseSpeed()
-    //{
-    //    if (_session.Data.Inventory.Count("SpeedPotion") > 0)
-    //    {
-    //        _session.Data.Inventory.Remove("SpeedPotion", 1);
-
-    //        speed += 2;
-    //        Invoke("DecreaseSpeed", 5);
-    //        _timer.SpawnTimer();
-
-    //    }
-    //}
-    //public void DecreaseSpeed()
-    //{
-    //    speed -= 2;
-    //}
-
     public void UseInventory()
     {
         if (IsSelectedItem(ItemTag.Throwable))
@@ -351,8 +301,19 @@ public class Hero : Creature
         switch (potion.Effect)
         {
             case Effect.AddHp:
-                _session.Data.Hp.Value += (int)potion.Value;
-                _health.SetHealth(_session.Data.Hp.Value);
+                if (_session.Data.Hp.Value + (int)potion.Value >= _maxHealth)
+                {
+                    _session.Data.Hp.Value = (int)_maxHealth;
+                    _health.SetHealth((int)_maxHealth);
+                    Debug.Log("overmax");
+                }
+                else
+                {
+                    _session.Data.Hp.Value += (int)potion.Value;
+                    _health.SetHealth(_session.Data.Hp.Value);
+                    Debug.Log("plus");
+
+                }
                 _sounds.Play("Heal");
                 break;
                     case Effect.SpeedUp:

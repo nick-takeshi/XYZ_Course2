@@ -9,6 +9,7 @@ public class ProgressBar : MonoBehaviour
 
     public void SetProgress(float progress)
     {
+        Debug.Log(progress);
         _bar.fillAmount = progress;
     }
    

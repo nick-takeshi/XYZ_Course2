@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: boss-totem
+  m_Controller: {fileID: 9100000, guid: 401fb4be63b41834fb2b5bff27f964ea, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e44ad88712eaea4418f6266cdc516681, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1867107053fe1d9488fac85149bb9b5a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5a79d73259c3e0947be4875b505b5475, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e5c8d32b376edbe4cb69b9187d8d5868, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e95883f359bd9294ebbf3c0aa4a1e20b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 58e8e3bfc08bc7249808c193d2f67767, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: ec38b3f652f34574298f6c6a3f1269fb, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a6b83fb7b0d0ed04ca3c486d1befa19c, type: 2}

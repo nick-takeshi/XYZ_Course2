@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c06fc13f662a2fa4b91e6e05072d3935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBar: {fileID: 1380390840}
+  _healthBar: {fileID: 1380390843}
   _currentPerk: {fileID: 78397580}
 --- !u!1 &803812684
 GameObject:
@@ -2560,9 +2560,9 @@ GameObject:
   - component: {fileID: 1380390839}
   - component: {fileID: 1380390842}
   - component: {fileID: 1380390841}
-  - component: {fileID: 1380390840}
+  - component: {fileID: 1380390843}
   m_Layer: 5
-  m_Name: HealthBar
+  m_Name: HeroHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2589,19 +2589,6 @@ RectTransform:
   m_AnchoredPosition: {x: 69.9, y: -16}
   m_SizeDelta: {x: 64, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1380390840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380390838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d38c273a09594d468f6b65917221b6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bar: {fileID: 1495426274}
 --- !u!114 &1380390841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2640,6 +2627,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1380390838}
   m_CullTransparentMesh: 1
+--- !u!114 &1380390843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380390838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d38c273a09594d468f6b65917221b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bar: {fileID: 1495426274}
 --- !u!1 &1400045189
 GameObject:
   m_ObjectHideFlags: 0
